@@ -132,6 +132,29 @@
         .signup-footer a { color: #e63946; font-weight: 600; text-decoration: none; }
         .signup-footer a:hover { text-decoration: underline; }
 
+        /* Social */
+        .social-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-bottom: 1.25rem; }
+        .social-btn {
+            display: flex; align-items: center; justify-content: center; gap: 0.45rem;
+            padding: 0.65rem; border: 1.5px solid var(--border-color);
+            border-radius: 10px; background: var(--bg-primary);
+            font-size: 0.85rem; font-weight: 600; color: var(--text-primary);
+            cursor: pointer; transition: all 0.2s ease;
+        }
+        .social-btn:hover { background: var(--bg-secondary); border-color: #e63946; transform: translateY(-1px); }
+        .social-btn .fa-google { color: #ea4335; }
+        .social-btn .fa-facebook { color: #1877f2; }
+
+        /* Divider */
+        .or-divider {
+            display: flex; align-items: center; gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.75rem; color: var(--text-muted);
+        }
+        .or-divider::before, .or-divider::after {
+            content: ''; flex: 1; height: 1px; background: var(--border-color);
+        }
+
         .rtl-hint { text-align: center; margin-top: 1rem; }
         .rtl-hint button { background: none; border: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.72rem; padding: 0.25rem 0.65rem; border-radius: 6px; cursor: pointer; transition: all 0.2s; }
         .rtl-hint button:hover { border-color: #e63946; color: #e63946; }
@@ -201,6 +224,20 @@
             </div>
 
             <button type="submit" class="btn-signup">Create Account &nbsp;<i class="fas fa-arrow-right"></i></button>
+
+            <div class="or-divider">OR</div>
+
+            <!-- Social Login -->
+            <div class="social-btns">
+                <button type="button" class="social-btn">
+                    <i class="fab fa-google"></i>
+                    <span>Google</span>
+                </button>
+                <button type="button" class="social-btn">
+                    <i class="fab fa-facebook" style="color: #1877f2;"></i>
+                    <span>Facebook</span>
+                </button>
+            </div>
         </form>
 
         <div class="signup-footer">

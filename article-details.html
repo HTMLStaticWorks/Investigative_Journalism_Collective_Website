@@ -18,6 +18,10 @@
                 <img src="assets/images/logo.png" alt="Logo">
                 <span class="text-accent">The</span> Collective<span class="text-accent">.</span>
             </a>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
             
             <div class="nav-links" id="nav-links">
                 <a href="index.html" class="nav-item">Home</a>
@@ -40,48 +44,182 @@
     <!-- Reading Progress -->
     <div id="reading-progress" style="position: fixed; top: 0; left: 0; height: 3px; background: var(--primary-color); z-index: 1001; width: 0;"></div>
 
-    <main class="py-lg">
-        <article class="container" style="max-width: 900px; margin-top: 4rem;">
-            <header class="mb-lg">
-                <span class="tag mb-sm">Corruption & Finance</span>
-                <h1 style="font-size: 3.5rem;">The <span class="text-accent underline">Shell Game</span>: Tracking the $4.2B Global Heist.</h1>
-                <div class="meta pb-sm mb-md" style="border-bottom: 1px solid var(--border-color); display: flex; gap: 2rem; color: var(--text-muted); font-size: 0.9rem;">
-                    <span>By <strong>Marcus Vance</strong></span>
-                    <span>March 24, 2026</span>
-                    <span><i class="far fa-clock"></i> 25 Min Read</span>
+    <main>
+        <!-- Cinematic Article Hero -->
+        <section class="article-hero reveal">
+            <div class="hero-bg" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url('assets/images/article_hero.png');"></div>
+            <div class="container hero-content">
+                <div class="hero-meta mb-sm">
+                    <span class="tag">Special Investigation</span>
+                    <span class="read-time"><i class="far fa-clock"></i> 25 Min Read</span>
                 </div>
-            </header>
-
-            <figure class="mb-lg">
-                <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1200&q=80" alt="Offshore Banking" class="border-radius shadow-lg" style="width: 100%;">
-                <figcaption class="text-center text-muted small mt-sm italic">Covert financial operations in the Cayman Islands. Photo: IJC Archives.</figcaption>
-            </figure>
-
-            <div class="article-body" style="font-size: 1.25rem; line-height: 1.8; color: var(--text-secondary);">
-                <p class="dropcap">I</p>t began with a single encrypted email in early 2025. What followed was a 14-month investigative journey through tax havens, shell companies, and high-security data silos. Our findings reveal a sophisticated network designed to circumvent international sanctions and facilitate the movement of billions in illicit capital.</p>
-                
-                <h2 class="mt-lg">The Architecture of Secrecy</h2>
-                <p>Hidden behind layers of anonymity, these networks operate with impunity. We tracked the flow of capital from major state-owned enterprises into a maze of holding companies registered in BVI and Panama.</p>
-                
-                <blockquote class="p-lg my-md border-radius bg-secondary italic" style="border-left: 5px solid var(--primary-color);">
-                    "The level of sophistication we're seeing here exceeds anything we've documented in the past decade. This isn't just tax avoidance; it's a parallel financial system." 
-                    <footer class="mt-sm font-bold">— Financial Intelligence Analyst, Interpol</footer>
-                </blockquote>
-
-                <p>Our data team processed over 1.2 million leaked documents, revealing the names of 145 public officials directly linked to these accounts. The impact on local economies has been devastating, leading to inflation, infrastructure decay, and a total breakdown of trust in public institutions.</p>
+                <h1 class="display-1 text-white">The <span class="text-accent italic">Shell Game</span>: Tracking the $4.2B Global Heist.</h1>
+                <div class="author-block mt-lg">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&h=100&q=80" alt="Marcus Vance" class="author-img">
+                    <div class="author-info">
+                        <span class="author-name">Marcus Vance</span>
+                        <span class="pub-date">March 24, 2026 • Exclusive</span>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <!-- Interaction Sidebar/Footer -->
-            <section class="mt-xl glass p-lg border-radius text-center reveal">
-                <h3>This investigation was <span class="text-accent">100% reader-funded.</span></h3>
-                <p>We spent $45,000 on legal fees and data security to bring this story to light. Help us fund our next deep dive.</p>
-                <div class="flex-center mt-md">
-                    <a href="donate.html" class="btn btn-primary">Support Independent Journalism</a>
-                    <a href="plans.html" class="btn btn-outline">Become a Member</a>
+        <!-- Section 1: The Narrative (Editorial Layout) -->
+        <section class="section narrative-section">
+            <div class="container grid-article">
+                <div class="narrative-body reveal">
+                    <p class="dropcap">I</p>t began with a single encrypted email in early 2025. What followed was a 14-month investigative journey through tax havens, shell companies, and high-security data silos. Our findings reveal a sophisticated network designed to circumvent international sanctions and facilitate the movement of billions in illicit capital.</p>
+                    
+                    <h2 class="mt-lg font-serif">The Architecture of Secrecy</h2>
+                    <p>Hidden behind layers of anonymity, these networks operate with impunity. We tracked the flow of capital from major state-owned enterprises into a maze of holding companies registered in the British Virgin Islands and Panama. This wasn't merely a series of isolated incidents, but a coordinated effort to dismantle financial transparency across borders.</p>
+                    
+                    <p>Our data team processed over 1.2 million leaked documents, revealing the names of 145 public officials directly linked to these accounts. The impact on local economies has been devastating, leading to inflation, infrastructure decay, and a total breakdown of trust in public institutions.</p>
                 </div>
-            </section>
-        </article>
+                
+                <aside class="narrative-sidebar reveal-right">
+                    <div class="key-finding text-center" style="display: flex; flex-direction: column; align-items: center;">
+                        <div class="finding-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h4>$4.2B</h4>
+                        <p>Total illicit funds tracked through 852 shell companies across 14 jurisdictions.</p>
+                    </div>
+                    <div class="key-finding text-center" style="display: flex; flex-direction: column; align-items: center;">
+                        <div class="finding-icon"><i class="fas fa-user-shield"></i></div>
+                        <h4>145 Officials</h4>
+                        <p>Public servants and politicians identified as beneficial owners of offshore entities.</p>
+                    </div>
+                    <div class="quote-sidebar mt-lg italic text-center">
+                        "This parallel financial system exists specifically to hide wealth from the people who need it most."
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Section 2: The Evidence (Dossier Design) -->
+        <section class="section dossier-section bg-secondary text-dark overflow-hidden" style="background-color: #f4f4f4;">
+            <div class="container">
+                <div class="section-header text-center mb-xl reveal" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                    <span class="tag mb-md" style="background: #000000; color: #ffffff; padding: 0.2rem 0.8rem; border-radius: 4px; font-weight: 700; display: inline-block;">Classified Intel</span>
+                    <h2 class="display-3 font-serif mb-md" style="color: #000000; text-align: center; width: 100%;">The <span class="text-accent italic">Evidence</span> Dossier.</h2>
+                    <p class="mx-auto mb-lg" style="max-width: 800px; margin-top: 1.5rem; text-align: center; color: #000000; font-weight: 500; font-size: 1.2rem; line-height: 1.6; display: block; width: 100%;">Our team spent 6,000+ hours analyzing meta-data and forensic accounting records. Here are the core components of the heist.</p>
+                </div>
+
+                <div class="dossier-grid reveal">
+                    <div class="dossier-item text-center" style="background: #ffffff; color: #000000;">
+                        <div class="dossier-content">
+                            <h3 style="color: #000000; text-align: center;">Transaction Forensics</h3>
+                            <p style="color: #333333; text-align: center;">Verification of 12,000+ swift messages confirming cross-border transfers between state-owned pools and private offshore hubs.</p>
+                        </div>
+                    </div>
+                    <div class="dossier-item text-center" style="background: #ffffff; color: #000000;">
+                        <div class="dossier-content">
+                            <h3 style="color: #000000; text-align: center;">Corporate Mapping</h3>
+                            <p style="color: #333333; text-align: center;">Visual path of 14 layer-deep holding structures designed to obfuscate the ultimate beneficial ownership of the capital.</p>
+                        </div>
+                    </div>
+                    <div class="dossier-item text-center" style="background: #ffffff; color: #000000;">
+                        <div class="dossier-content">
+                            <h3 style="color: #000000; text-align: center;">Encrypted Logs</h3>
+                            <p style="color: #333333; text-align: center;">Communications between high-level proxy directors and political intermediaries discussing the movement of "Project Eclipse" funds.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Global Impact (Impact Pipeline) -->
+        <section class="section impact-pipeline-section py-xl">
+            <div class="container text-center">
+                <div class="reveal mb-xl">
+                    <h2 class="display-3 font-serif">Global <span class="text-accent italic">Impact</span> Timeline.</h2>
+                    <p class="text-muted">The ripple effects of this investigation are being felt in parliaments around the world.</p>
+                </div>
+
+                <div class="pipeline-container reveal">
+                    <div class="pipeline-step">
+                        <div class="step-blob"><i class="fas fa-gavel"></i></div>
+                        <div class="step-info">
+                            <h5>Legal Action</h5>
+                            <p>3 major trials initiated in European courts following our data leak.</p>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="step-blob active-blob"><i class="fas fa-landmark"></i></div>
+                        <div class="step-info">
+                            <h5>Policy Reform</h5>
+                            <p>New transparency laws passed in 4 key tax haven jurisdictions.</p>
+                        </div>
+                    </div>
+                    <div class="pipeline-step">
+                        <div class="step-blob"><i class="fas fa-coins"></i></div>
+                        <div class="step-info">
+                            <h5>Fund Recovery</h5>
+                            <p>$850M in frozen assets currently being clawed back by authorities.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-xl reveal pt-xl border-top" style="margin-top: 8rem;">
+                    <h3 style="margin-bottom: 2rem;">Help us fund our next <span class="text-accent">Deep Dive.</span></h3>
+                    <p class="mb-lg" style="margin-bottom: 3rem;">We answer to no one but the truth. Join 40,000+ supporters.</p>
+                    <div class="flex-center">
+                        <a href="donate.html" class="btn btn-primary btn-lg">Support Our Work</a>
+                        <a href="plans.html" class="btn btn-outline btn-lg">Become a Member</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <style>
+        /* Immersive Article Styles */
+        .article-hero { position: relative; min-height: 80vh; display: flex; align-items: center; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: -1; transform: scale(1.05); }
+        .hero-content { position: relative; z-index: 10; padding: 4rem 1rem; }
+        .hero-meta { display: flex; align-items: center; gap: 1.5rem; color: rgba(255,255,255,0.8); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; }
+        .display-1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.1; margin-bottom: 2rem; }
+        
+        .author-block { display: flex; align-items: center; gap: 1rem; }
+        .author-img { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary-color); object-fit: cover; }
+        .author-info { display: flex; flex-direction: column; }
+        .author-name { color: #fff; font-weight: 700; font-size: 1.1rem; }
+        .pub-date { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+
+        .grid-article { display: grid; grid-template-columns: 1.8fr 1fr; gap: 4rem; margin-top: 4rem; }
+        .narrative-body { font-size: 1.25rem; line-height: 1.8; color: var(--text-secondary); }
+        .dropcap { float: left; font-size: 6rem; line-height: 0.7; margin: 0.1em 0.2em 0 0; font-family: var(--font-heading); color: var(--primary-color); font-weight: 700; }
+        
+        /* Sidebar Elements */
+        .narrative-sidebar { display: flex; flex-direction: column; gap: 2rem; border-left: 1px solid var(--border-color); padding-left: 3rem; }
+        .key-finding { background: var(--bg-secondary); padding: 2rem; border-radius: 12px; border-top: 4px solid var(--primary-color); }
+        .finding-icon { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; }
+        .key-finding h4 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-primary); }
+        .quote-sidebar { position: relative; font-size: 1.4rem; line-height: 1.5; color: var(--text-primary); padding-top: 2rem; }
+        .quote-sidebar::before { content: '"'; position: absolute; top: -1rem; left: 0; font-size: 4rem; color: var(--primary-color); opacity: 0.3; }
+
+        /* Dossier Styles */
+        .dossier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+        .dossier-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 3rem 2rem; position: relative; overflow: hidden; transition: all 0.4s ease; border-radius: 4px; }
+        .dossier-item:hover { background: rgba(255,255,255,0.06); border-color: var(--primary-color); transform: translateY(-5px); }
+        .dossier-num { position: absolute; top: -1rem; right: -1rem; font-size: 8rem; font-weight: 900; color: var(--primary-color); opacity: 0.05; }
+        .dossier-content h3 { font-size: 1.3rem; margin-bottom: 1rem; color: #fff; }
+        .dossier-content p { color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+        /* Pipeline Styles */
+        .pipeline-container { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-top: 4rem; position: relative; }
+        .pipeline-step { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+        .step-blob { width: 80px; height: 80px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--primary-color); border: 2px solid var(--border-color); position: relative; transition: all 0.4s ease; }
+        .active-blob { background: var(--primary-color); color: #fff; border-color: var(--primary-color); box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.3); }
+        .pipeline-arrow { align-self: center; font-size: 1.5rem; color: var(--border-color); padding-bottom: 5rem; }
+        .step-info h5 { font-size: 1.25rem; margin-bottom: 0.5rem; font-weight: 700; }
+        .step-info p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; max-width: 200px; margin: 0 auto; }
+
+        @media (max-width: 992px) {
+            .grid-article { grid-template-columns: 1fr; }
+            .narrative-sidebar { border-left: none; padding-left: 0; padding-top: 3rem; border-top: 1px solid var(--border-color); }
+            .pipeline-container { flex-direction: column; gap: 3rem; align-items: center; }
+            .pipeline-arrow { transform: rotate(90deg); padding-bottom: 0; }
+        }
+    </style>
 
     <!-- Footer -->
     <footer class="footer">

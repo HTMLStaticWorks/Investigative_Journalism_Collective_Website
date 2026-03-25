@@ -183,17 +183,70 @@
         .billing-price { font-size: 2rem; font-weight: 800; color: #e63946; }
         .billing-price span { font-size: 0.85rem; font-weight: 400; color: var(--text-muted); }
 
-        @media (max-width: 900px) {
-            body { flex-direction: column; }
-            .sidebar { width: 100%; min-width: 0; height: auto; position: static; }
+        /* ── Mobile Dashboard Header ── */
+        .dash-mobile-header {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 70px;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1001;
+        }
+        .dash-mobile-header .logo { text-decoration: none; font-size: 1.1rem; font-weight: 700; color: var(--text-primary); display: flex; align-items: center; gap: 0.6rem; }
+        .dash-mobile-header .logo img { width: 32px; height: 32px; }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1005;
+            backdrop-filter: blur(2px);
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                position: fixed;
+                left: -280px;
+                top: 0;
+                height: 100vh;
+                z-index: 1010;
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 20px 0 50px rgba(0,0,0,0.15);
+            }
+            .sidebar.active { transform: translateX(280px); }
+            .sidebar-overlay.active { display: block; }
+            .dash-mobile-header { display: flex; }
+            .dash-main { margin-top: 70px; padding: 1.5rem; width: 100%; }
+            .dash-topbar { flex-direction: column; align-items: flex-start; gap: 1rem; }
             .stat-grid { grid-template-columns: 1fr; }
+            .dash-table-wrap { overflow-x: auto; width: 100%; }
+            .settings-row { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+            .settings-row input, .settings-row select { width: 100% !important; }
         }
     </style>
 </head>
-<body>
+<body style="display: flex;">
+
+    <!-- ── Dashboard Sidebar Overlay ── -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- ── Mobile Header ── -->
+    <header class="dash-mobile-header">
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Logo">
+            <span><span style="color:#e63946;">The</span> Collective</span>
+        </a>
+        <button class="btn-icon" id="sidebar-toggle" aria-label="Toggle Sidebar" style="background:none; border:none; color:var(--text-primary); font-size:1.4rem; cursor:pointer;">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
 
     <!-- ── Sidebar ── -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
         <a href="index.html" class="sb-logo">
             <img src="assets/images/logo.png" alt="Logo">
             <span><span style="color:#e63946;">The</span> Collective<span class="dot">.</span></span>
@@ -351,6 +404,7 @@
             </div>
             <div class="dash-section">
                 <div class="dash-section-head"><h3>Donation History</h3></div>
+                <div class="dash-table-wrap">
                 <table class="dash-table">
                     <thead>
                         <tr><th>Date</th><th>Amount</th><th>Campaign</th><th>Status</th><th>Receipt</th></tr>
@@ -363,6 +417,7 @@
                         <tr><td>Nov 5, 2025</td><td>$25.00</td><td>Insider Membership</td><td><span class="badge-pending">Pending</span></td><td><span style="color:var(--text-muted);font-size:0.8rem;">—</span></td></tr>
                     </tbody>
                 </table>
+            </div>
             </div>
         </div>
 
@@ -401,6 +456,7 @@
 
             <div class="dash-section">
                 <div class="dash-section-head"><h3>Billing History</h3></div>
+                <div class="dash-table-wrap">
                 <table class="dash-table">
                     <thead>
                         <tr><th>Date</th><th>Description</th><th>Amount</th><th>Status</th></tr>
@@ -411,6 +467,7 @@
                         <tr><td>Jan 24, 2026</td><td>Insider — Monthly</td><td>$25.00</td><td><span class="badge-success">Paid</span></td></tr>
                     </tbody>
                 </table>
+            </div>
             </div>
         </div>
 
@@ -511,6 +568,32 @@
         const themeBtn    = document.getElementById('theme-toggle');
         if (darkSetting && themeBtn) {
             darkSetting.addEventListener('change', () => themeBtn.click());
+        }
+
+        // Sidebar Toggle for Mobile
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+
+        if (sidebarToggle && sidebar && overlay) {
+            const toggleSidebar = () => {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+            };
+
+            sidebarToggle.addEventListener('click', toggleSidebar);
+            overlay.addEventListener('click', toggleSidebar);
+
+            // Close sidebar when clicking a nav link on mobile
+            const sbLinks = sidebar.querySelectorAll('.nav-link');
+            sbLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 1024) {
+                        toggleSidebar();
+                    }
+                });
+            });
         }
     </script>
 </body>

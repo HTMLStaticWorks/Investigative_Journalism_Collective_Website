@@ -18,6 +18,10 @@
                 <img src="assets/images/logo.png" alt="Logo">
                 <span class="text-accent">The</span> Collective<span class="text-accent">.</span>
             </a>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
             
             <div class="nav-links" id="nav-links">
                 <a href="index.html" class="nav-item">Home</a>
@@ -257,9 +261,13 @@
 
         /* Submit */
         .donate-submit { width: 100%; padding: 0.9rem; background: #e63946; color: #fff; font-size: 1rem; font-weight: 700; border: none; border-radius: 12px; cursor: pointer; transition: background 0.25s, transform 0.2s, box-shadow 0.25s; margin-top: 0.5rem; letter-spacing: 0.2px; }
-        .donate-submit:hover { background: #c1121f; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(230,57,70,0.38); }
+        .donate-submit:hover { background: #c1121f; color: #fff; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(230,57,70,0.38); }
         .donate-submit:active { transform: scale(0.98); }
         .donate-submit i { margin-right: 0.4rem; }
+        
+        /* Ensure selected states stay white on hover */
+        .freq-btn.active:hover,
+        .amt-btn.selected:hover { color: #fff; }
 
         /* Footer notes */
         .secure-note { text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 1.25rem; }

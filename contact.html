@@ -18,6 +18,10 @@
                 <img src="assets/images/logo.png" alt="Logo">
                 <span class="text-accent">The</span> Collective<span class="text-accent">.</span>
             </a>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
             
             <div class="nav-links" id="nav-links">
                 <a href="index.html" class="nav-item">Home</a>
@@ -37,62 +41,111 @@
         </div>
     </nav>
 
-    <main class="py-lg">
-        <div class="container" style="margin-top: 4rem;">
-            <header class="text-center mb-xl">
-                <h1 class="reveal">Get in <span class="text-accent">Touch.</span></h1>
-                <p class="lead">Whether you have a secure tip, a press inquiry, or a question about your membership, we're here to help.</p>
-            </header>
+    <main>
+        <!-- Premium Contact Hero -->
+        <header class="contact-hero">
+            <div class="container hero-content text-center">
+                <span class="tag mb-sm">Secure Communication</span>
+                <h1 class="hero-title reveal">Get in <span class="text-accent">Touch.</span></h1>
+                <p class="lead reveal">Whether you have a secure tip, a press inquiry, or a question about your membership, we're here to help.</p>
+            </div>
+        </header>
 
-            <div class="grid-2 gap-xl">
-                <!-- Secure Tip Form -->
-                <div class="reveal">
-                    <div class="p-lg bg-secondary border-radius mb-md" style="border-top: 4px solid var(--primary-color);">
-                        <h2 class="h3"><i class="fas fa-shield-alt text-primary"></i> Submit a Secure Tip</h2>
-                        <p class="small text-muted mb-md">Your anonymity is our priority. We use end-to-end encryption for all whistleblower communications.</p>
-                        
-                        <form class="needs-validation">
-                            <div class="form-group">
-                                <label class="form-label">Subject of Tip</label>
-                                <input type="text" class="form-control" placeholder="Corruption, Environmental breach, etc." required>
+        <section class="section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Secure Tip Form -->
+                    <div class="reveal">
+                        <div class="contact-card tip-card">
+                            <div class="card-header">
+                                <h2 class="h3"><i class="fas fa-shield-alt text-primary"></i> Submit a Secure Tip</h2>
+                                <p class="small text-muted">Your anonymity is our priority. We use end-to-end encryption for all whistleblower communications.</p>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label">Details</label>
-                                <textarea class="form-control" rows="5" placeholder="Please provide as much detail as possible..." required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Attachments (Encrypted)</label>
-                                <input type="file" class="form-control">
-                                <p class="small mt-xs text-muted">Max 50MB. Files are sanitized upon upload.</p>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Securely</button>
-                        </form>
+                            
+                            <form class="secure-form">
+                                <div class="form-group">
+                                    <label class="form-label">Subject of Tip</label>
+                                    <div class="input-wrap">
+                                        <i class="fas fa-tag"></i>
+                                        <input type="text" class="form-control" placeholder="Corruption, Environmental breach, etc." required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Details</label>
+                                    <div class="input-wrap">
+                                        <i class="fas fa-align-left" style="top: 1.25rem; transform: none;"></i>
+                                        <textarea class="form-control" rows="5" placeholder="Please provide as much detail as possible..." required></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Attachments (Encrypted)</label>
+                                    <div class="file-input-wrapper">
+                                        <input type="file" id="file-upload" class="file-input">
+                                        <label for="file-upload" class="file-label">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                            <span>Choose a file...</span>
+                                        </label>
+                                    </div>
+                                    <p class="small mt-xs text-muted">Max 50MB. Files are sanitized upon upload.</p>
+                                </div>
+                                <button type="submit" class="btn btn-primary submit-btn">
+                                    Submit Securely <i class="fas fa-paper-plane ml-xs"></i>
+                                </button>
+                            </form>
+                        </div>
                     </div>
-                </div>
 
-                <!-- General Contact -->
-                <div class="reveal">
-                    <div class="mb-xl">
-                        <h3>General Inquiries</h3>
-                        <p class="small">For press, administrative, or community questions.</p>
-                        <ul class="list-unstyled mt-md">
-                            <li class="mb-sm"><i class="fas fa-envelope text-accent"></i> info@thecollective.org</li>
-                            <li class="mb-sm"><i class="fas fa-phone text-accent"></i> +1 (202) 555-0199</li>
-                            <li class="mb-sm"><i class="fas fa-map-marker-alt text-accent"></i> 124 Truth Ave, Suite 300, Washington, DC</li>
-                        </ul>
-                    </div>
+                    <!-- General Contact -->
+                    <div class="reveal">
+                        <div class="contact-info-section">
+                            <div class="info-block mb-xl">
+                                <h3 class="mb-sm">General Inquiries</h3>
+                                <p class="small text-muted mb-md">For press, administrative, or community questions.</p>
+                                <ul class="contact-list">
+                                    <li>
+                                        <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+                                        <div>
+                                            <span class="label">Email</span>
+                                            <span class="value">info@thecollective.org</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon-circle"><i class="fas fa-phone"></i></div>
+                                        <div>
+                                            <span class="label">Phone</span>
+                                            <span class="value">+1 (202) 555-0199</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+                                        <div>
+                                            <span class="label">Office</span>
+                                            <span class="value">124 Truth Ave, Suite 300, DC</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
 
-                    <div class="card p-lg reveal">
-                        <h3>Secure Alternative</h3>
-                        <p class="small">If you're a whistleblower, we recommend using Signal or our Tor Drop Box for maximum safety.</p>
-                        <div class="mt-md">
-                            <p class="font-bold mb-xs">Signal Messenger</p>
-                            <code class="p-sm bg-secondary border-radius d-block">+1 (202) 999-0122</code>
+                            <div class="card p-lg reveal secure-alt-card">
+                                <h3>Secure Alternative</h3>
+                                <p class="small text-muted mb-lg">If you're a whistleblower, we recommend using Signal or our Tor Drop Box for maximum safety.</p>
+                                
+                                <div class="secure-option mb-md">
+                                    <div class="option-header">
+                                        <i class="fab fa-signal messenger-icon"></i>
+                                        <span class="font-bold">Signal Messenger</span>
+                                    </div>
+                                    <div class="option-value">
+                                        <code>+1 (202) 999-0122</code>
+                                        <button class="copy-btn"><i class="far fa-copy"></i></button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -142,7 +195,6 @@
 
             <!-- Bottom Row -->
             <div class="footer-bottom">
-
                 <p>&copy; 2026 Investigative Journalism Collective. All rights reserved.</p>
             </div>
         </div>
@@ -150,10 +202,70 @@
 
     <script src="assets/js/main.js"></script>
     <style>
-        .list-unstyled { list-style: none; padding: 0; }
-        .list-unstyled li { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-        .active { color: var(--primary-color) !important; font-weight: 700; }
-        .gap-xl { gap: 4rem; }
+        /* ── Contact Hero ── */
+        .contact-hero {
+            position: relative;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(8, 8, 20, 0.85), rgba(8, 8, 20, 0.85)), 
+                        url('https://images.unsplash.com/photo-1423666639041-f56196c271e8?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            padding-top: 5rem;
+        }
+        .contact-hero .tag { color: #fff; border-color: rgba(255,255,255,0.3); }
+        .contact-hero .hero-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #fff; margin-bottom: 1rem; }
+        .contact-hero .lead { color: rgba(255,255,255,0.7); max-width: 650px; margin: 0 auto; }
+
+        /* ── Layout Grid ── */
+        .contact-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 5rem; align-items: start; }
+
+        /* ── Tip Card & Form ── */
+        .tip-card {
+            background: var(--bg-primary);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            padding: 3rem;
+        }
+        .tip-card .card-header { margin-bottom: 2.5rem; }
+        .tip-card h2 { display: flex; align-items: center; gap: 0.75rem; font-size: 1.75rem; margin-bottom: 0.5rem; }
+
+        .secure-form .form-group { margin-bottom: 1.5rem; }
+        .secure-form .form-label { display: block; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-primary); margin-bottom: 0.5rem; }
+        
+        .input-wrap { position: relative; }
+        .input-wrap i { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.9rem; opacity: 0.6; }
+        .input-wrap .form-control { width: 100%; padding: 0.85rem 1rem 0.85rem 2.8rem; border: 1.5px solid var(--border-color); border-radius: 10px; background: var(--bg-secondary); color: var(--text-primary); transition: all 0.2s; }
+        .input-wrap .form-control:focus { border-color: var(--primary-color); background: var(--bg-primary); box-shadow: 0 0 0 4px rgba(230,57,70,0.08); outline: none; }
+
+        /* File input */
+        .file-input-wrapper { position: relative; }
+        .file-input { position: absolute; width: 0.1px; height: 0.1px; opacity: 0; overflow: hidden; z-index: -1; }
+        .file-label { display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1.25rem; border: 1.5px dashed var(--border-color); border-radius: 10px; cursor: pointer; color: var(--text-muted); transition: all 0.2s; }
+        .file-label:hover { border-color: var(--primary-color); color: var(--primary-color); background: rgba(230,57,70,0.03); }
+
+        .submit-btn { width: 100%; padding: 1rem; border-radius: 12px; font-weight: 700; letter-spacing: 0.5px; margin-top: 1rem; }
+
+        /* ── Contact Info Sidebar ── */
+        .contact-list { list-style: none; padding: 0; }
+        .contact-list li { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 2rem; }
+        .icon-circle { width: 48px; height: 48px; min-width: 48px; border-radius: 50%; background: var(--bg-secondary); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.1rem; }
+        .contact-list .label { display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1px; letter-spacing: 0.5px; }
+        .contact-list .value { color: var(--text-primary); font-weight: 600; font-size: 1.05rem; }
+
+        .secure-alt-card { border-radius: 20px; background: var(--bg-secondary); border: none; }
+        .secure-alt-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .messenger-icon { font-size: 1.2rem; color: #2086ff; margin-right: 0.5rem; }
+        .option-header { display: flex; align-items: center; margin-bottom: 0.75rem; }
+        .option-value { display: flex; align-items: center; justify-content: space-between; background: var(--bg-primary); padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid var(--border-color); }
+        .option-value code { font-family: 'Inter', monospace; color: var(--text-primary); font-size: 0.95rem; font-weight: 600; }
+        .copy-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; transition: color 0.2s; }
+        .copy-btn:hover { color: var(--primary-color); }
+
+        @media (max-width: 1024px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 4rem; }
+            .contact-hero .hero-title { font-size: 2.75rem; }
+        }
     </style>
 </body>
 </html>

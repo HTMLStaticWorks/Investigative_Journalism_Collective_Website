@@ -2,8 +2,50 @@
  * Investigative Journalism Collective - Core Interactions
  */
 
+// Prevent browser from restoring scroll position automatically
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Global Force Scroll to Top on Load
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. Scroll to Top on Refresh (User Request)
+    // 0. Navbar Toggle (Hamburger)
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinksContainer = document.getElementById('nav-links');
+
+    if (navToggle && navLinksContainer) {
+        navToggle.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('active');
+            // Toggle icon between bars and times
+            const icon = navToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
+        });
+
+        // Close menu when clicking a link
+        const navItems = navLinksContainer.querySelectorAll('.nav-item, .btn');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinksContainer.classList.remove('active');
+                const icon = navToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            });
+        });
+    }
+
+    // 0.1 Robust Scroll to Top
+    window.scrollTo(0, 0);
+    
+    // Also handle refresh explicitly
     if (performance.getEntriesByType('navigation')[0].type === 'reload') {
         window.scrollTo(0, 0);
     }
