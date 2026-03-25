@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Collective | Independent Investigative Journalism</title>
+    <meta name="description" content="A non-profit investigative journalism collective dedicated to transparency and holding power accountable.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Logo">
+                <span class="text-accent">The</span> Collective<span class="text-accent">.</span>
+            </a>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-item active">Home</a>
+                <a href="home-2.html" class="nav-item">Home 2</a>
+                <a href="articles.html" class="nav-item">Investigations</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="plans.html" class="nav-item">Subscribe</a>
+                <a href="login.html" class="nav-item">Login</a>
+                <a href="signup.html" class="nav-item">Signup</a>
+                <a href="dashboard.html" class="nav-item">Dashboard</a>
+                <a href="donate.html" class="btn btn-primary btn-sm">Support Us</a>
+                <button id="rtl-toggle" class="btn-rtl">RTL</button>
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reading Progress -->
+    <div id="reading-progress" class="reading-progress"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-3d section">
+            <div class="container grid-2">
+                <div class="hero-text reveal">
+                    <span class="tag mb-sm">Exclusive Report</span>
+                    <h1>Unmasking the <span class="text-accent italic">Shadow Networks.</span></h1>
+                    <p class="lead">Our 12-month investigation reveals a global web of shell companies facilitating over $4B in illicit cross-border transfers.</p>
+                    <div class="hero-actions">
+                        <a href="article-details.html" class="btn btn-primary">Read the Investigation</a>
+                        <a href="articles.html" class="btn btn-outline">Explore Archives</a>
+                    </div>
+                </div>
+                <div class="hero-visual reveal">
+                    <!-- 3D Interactive Card logic in JS -->
+                    <div class="card interactive-tilt">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80" alt="Shadow Networks Investigation" class="card-img">
+                        </div>
+                        <div class="card-body p-md">
+                            <h3>Project Eclipse: The Digital Paper Trail</h3>
+                            <p class="text-muted">How 1.2 million leaked documents led us to the truth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Grid -->
+        <section class="section bg-secondary">
+            <div class="container">
+                <div class="section-header mb-md text-center">
+                    <h2>Latest <span class="text-accent">Investigations</span></h2>
+                    <a href="articles.html" class="text-accent font-bold">View Archive &rarr;</a>
+                </div>
+                
+                <div class="grid-3">
+                    <!-- Article 1 -->
+                    <div class="card reveal">
+                        <div class="card-img-wrapper">
+                            <span class="tag-floating">Health</span>
+                            <img src="https://images.unsplash.com/photo-1584483766114-2cea6facdf57?auto=format&fit=crop&w=600&q=80" alt="Healthcare" class="card-img">
+                        </div>
+                        <div class="p-md text-center">
+                            <h3>Profit Over Patients</h3>
+                            <p class="text-secondary">Private equity's dismantling of rural healthcare infrastructure.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 2 -->
+                    <div class="card reveal">
+                        <div class="card-img-wrapper">
+                            <span class="tag-floating">Tech</span>
+                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=600&q=80" alt="Tech" class="card-img">
+                        </div>
+                        <div class="p-md text-center">
+                            <h3>Silicon Shadows</h3>
+                            <p class="text-secondary">How sanctions bypass fueled a covert chip race.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 3 -->
+                    <div class="card reveal">
+                        <div class="card-img-wrapper">
+                            <span class="tag-floating">Environment</span>
+                            <img src="https://images.unsplash.com/photo-1610337673044-720471f83677?auto=format&fit=crop&w=600&q=80" alt="Environment" class="card-img">
+                        </div>
+                        <div class="p-md text-center">
+                            <h3>The Smokescreen</h3>
+                            <p class="text-secondary">Exposing the fraud in global conservation offsets.</p>
+                        </div>
+                    </div>
+
+                    <!-- Article 4 -->
+                    <div class="card reveal">
+                        <div class="card-img-wrapper">
+                            <span class="tag-floating">Mining</span>
+                            <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=600&q=80" alt="Mining" class="card-img">
+                        </div>
+                        <div class="p-md text-center">
+                            <h3>The Lithium Scramble</h3>
+                            <p class="text-secondary">Environmental consequences of the green energy gold rush.</p>
+                        </div>
+                    </div>
+
+                    <!-- Article 5 -->
+                    <div class="card reveal">
+                        <div class="card-img-wrapper">
+                            <span class="tag-floating">AI Ethics</span>
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="AI" class="card-img">
+                        </div>
+                        <div class="p-md text-center">
+                            <h3>Ghost in the Machine</h3>
+                            <p class="text-secondary">How algorithmic bias is shaping judicial outcomes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Article 6 -->
+                    <div class="card reveal">
+                        <div class="card-img-wrapper">
+                            <span class="tag-floating">Justice</span>
+                            <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=600&q=80" alt="Justice" class="card-img">
+                        </div>
+                        <div class="p-md text-center">
+                            <h3>The Cargo Trap</h3>
+                            <p class="text-secondary">Uncovering human trafficking in global maritime trade.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Impact Section -->
+        <section class="impact-section">
+            <div class="container">
+                <div class="impact-grid reveal">
+                    <div class="stat-item">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Policy Revisions</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">$4.2B</span>
+                        <span class="stat-label">Recovered Funds</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">18</span>
+                        <span class="stat-label">Major Awards</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500k+</span>
+                        <span class="stat-label">Monthly Readers</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter / CTA -->
+        <section class="section">
+            <div class="container text-center">
+                <div class="cta-box glass p-xl reveal">
+                    <h2>Truth is a <span class="text-accent">Vulnerable</span> Resource.</h2>
+                    <p class="mb-md">Join 50,000+ readers who receive our monthly deep-dive briefings. No ads. No bias.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="form-control" placeholder="your@email.com" required>
+                        <button type="submit" class="btn btn-primary">Subscribe Now</button>
+                    </form>
+                    <p class="text-muted small" style="margin-top: 1rem;">100% Reader Funded. Full <a href="transparency.html">transparency</a> in every report.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Branding & Social -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo mb-sm">
+                        <img src="assets/images/logo.png" alt="Logo">
+                        The Collective<span class="text-accent">.</span>
+                    </a>
+                    <p class="footer-mission mb-md">
+                        Holding power accountable through rigorous, data-driven journalism. 
+                        We are a 501(c)(3) non-profit organization.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Explore -->
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="articles.html">Investigations</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="transparency.html">Impact Report</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Organization -->
+                <div class="footer-links">
+                    <h4>Organization</h4>
+                    <ul>
+                        <li><a href="about.html">Our Mission</a></li>
+                        <li><a href="contact.html">Secure Tips</a></li>
+                        <li><a href="plans.html">Support Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="footer-bottom">
+
+                <p>&copy; 2026 Investigative Journalism Collective. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay">
+        <button id="close-search" class="btn-icon"><i class="fas fa-times"></i></button>
+        <div class="search-form">
+            <input type="text" placeholder="Search investigations..." autofocus>
+            <button class="btn btn-primary">Search</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <style>
+        /* Floating Tags */
+        .tag-floating {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 2px;
+            z-index: 10;
+        }
+        
+        /* Reading Progress */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--primary-color);
+            z-index: 1001;
+            width: 0;
+        }
+
+        /* Hero Tilt Effect */
+        .interactive-tilt {
+            transition: transform 0.1s ease-out;
+            perspective: 1000px;
+        }
+
+        /* Search Overlay */
+        .search-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+        .search-overlay.active { display: flex; animation: fadeIn var(--transition-base); }
+        .search-form { text-align: center; width: 100%; max-width: 600px; padding: 2rem; }
+        .search-form input { 
+            width: 100%; 
+            background: transparent; 
+            border: none; 
+            border-bottom: 2px solid var(--primary-color); 
+            font-size: 2rem; 
+            color: #fff; 
+            margin-bottom: 2rem;
+            outline: none;
+        }
+        #close-search { position: absolute; top: 2rem; right: 2rem; font-size: 2rem; color: #fff; background: none; border: none; cursor: pointer; }
+
+        .btn-icon { background: none; border: none; cursor: pointer; color: var(--text-primary); font-size: 1.25rem; }
+    </style>
+</body>
+</html>

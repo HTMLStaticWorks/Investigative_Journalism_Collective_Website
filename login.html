@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | The Collective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+        }
+
+        /* ── Login Card ── */
+        .login-card {
+            width: 100%;
+            max-width: 440px;
+            background: var(--bg-primary);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.10);
+            border: 1px solid var(--border-color);
+            padding: 2.75rem 2.5rem 2.25rem;
+        }
+
+        /* Logo */
+        .login-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            text-decoration: none;
+            margin-bottom: 1.75rem;
+        }
+        .login-logo img { width: 34px; height: 34px; object-fit: contain; }
+        .login-logo .brand { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); }
+        .login-logo .dot { color: #e63946; }
+
+        /* Heading */
+        .login-heading { text-align: center; margin-bottom: 1.75rem; }
+        .login-heading h2 { font-size: 1.55rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.3rem; }
+        .login-heading p  { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* Social */
+        .social-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-bottom: 1.25rem; }
+        .social-btn {
+            display: flex; align-items: center; justify-content: center; gap: 0.45rem;
+            padding: 0.65rem; border: 1.5px solid var(--border-color);
+            border-radius: 10px; background: var(--bg-primary);
+            font-size: 0.85rem; font-weight: 600; color: var(--text-primary);
+            cursor: pointer; transition: all 0.2s ease;
+        }
+        .social-btn:hover { background: var(--bg-secondary); border-color: #e63946; transform: translateY(-1px); }
+        .social-btn .fa-google { color: #ea4335; }
+
+        /* Divider */
+        .or-divider {
+            display: flex; align-items: center; gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.75rem; color: var(--text-muted);
+        }
+        .or-divider::before, .or-divider::after {
+            content: ''; flex: 1; height: 1px; background: var(--border-color);
+        }
+
+        /* Fields */
+        .field-group { margin-bottom: 1rem; }
+        .field-top {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 0.4rem;
+        }
+        .field-top label { font-size: 0.81rem; font-weight: 600; color: var(--text-primary); }
+        .field-top a { font-size: 0.78rem; color: #e63946; text-decoration: none; }
+        .field-top a:hover { text-decoration: underline; }
+
+        .field-wrap { position: relative; }
+        .field-wrap .f-icon {
+            position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%);
+            color: var(--text-muted); font-size: 0.82rem; pointer-events: none;
+        }
+        .field-wrap input {
+            width: 100%;
+            padding: 0.72rem 2.5rem 0.72rem 2.4rem;
+            border: 1.5px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            transition: all 0.2s ease;
+            outline: none;
+        }
+        .field-wrap input:focus {
+            border-color: #e63946;
+            background: var(--bg-primary);
+            box-shadow: 0 0 0 3px rgba(230,57,70,0.08);
+        }
+        .field-wrap input::placeholder { color: var(--text-muted); opacity: 0.6; }
+
+        .pw-toggle {
+            position: absolute; right: 0.85rem; top: 50%; transform: translateY(-50%);
+            background: none; border: none; cursor: pointer;
+            color: var(--text-muted); font-size: 0.82rem; padding: 0;
+        }
+        .pw-toggle:hover { color: #e63946; }
+
+        /* Remember */
+        .remember-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.4rem; }
+        .remember-row input[type="checkbox"] { accent-color: #e63946; width: 14px; height: 14px; }
+        .remember-row label { font-size: 0.81rem; color: var(--text-muted); cursor: pointer; }
+
+        /* Submit */
+        .btn-login {
+            width: 100%;
+            padding: 0.82rem;
+            background: #e63946;
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease;
+            letter-spacing: 0.2px;
+            margin-bottom: 1.25rem;
+        }
+        .btn-login:hover { background: #c1121f; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(230,57,70,0.32); }
+        .btn-login:active { transform: scale(0.98); }
+
+        /* Footer */
+        .login-footer { text-align: center; }
+        .login-footer p { font-size: 0.82rem; color: var(--text-muted); }
+        .login-footer a { color: #e63946; font-weight: 600; text-decoration: none; }
+        .login-footer a:hover { text-decoration: underline; }
+
+        .rtl-hint { text-align: center; margin-top: 1rem; }
+        .rtl-hint button { background: none; border: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.72rem; padding: 0.25rem 0.65rem; border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+        .rtl-hint button:hover { border-color: #e63946; color: #e63946; }
+
+        /* Back link */
+        .back-link {
+            display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+            margin-bottom: 1.5rem; font-size: 0.8rem; color: var(--text-muted);
+            text-decoration: none; transition: color 0.2s;
+        }
+        .back-link:hover { color: #e63946; }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to site
+        </a>
+
+        <!-- Logo -->
+        <a href="index.html" class="login-logo">
+            <img src="assets/images/logo.png" alt="Logo">
+            <span class="brand"><span style="color:#e63946;">The</span> Collective<span class="dot">.</span></span>
+        </a>
+
+        <!-- Heading -->
+        <div class="login-heading">
+            <h2>Welcome Back</h2>
+            <p>Sign in to access your member dashboard and exclusive reports.</p>
+        </div>
+
+        <!-- Form -->
+        <form action="dashboard.html">
+            <div class="field-group">
+                <div class="field-top"><label for="email">Email Address</label></div>
+                <div class="field-wrap">
+                    <i class="fas fa-envelope f-icon"></i>
+                    <input type="email" id="email" placeholder="name@example.com" required>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <div class="field-top">
+                    <label for="password">Password</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <div class="field-wrap">
+                    <i class="fas fa-lock f-icon"></i>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                    <button type="button" class="pw-toggle" onclick="togglePw()">
+                        <i class="fas fa-eye" id="pw-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="remember-row">
+                <input type="checkbox" id="remember">
+                <label for="remember">Keep me logged in for 30 days</label>
+            </div>
+
+            <button type="submit" class="btn-login">Sign In &nbsp;<i class="fas fa-arrow-right"></i></button>
+        </form>
+
+        <div class="login-footer">
+            <p>Don't have an account? <a href="signup.html">Join The Collective</a></p>
+        </div>
+
+        <div class="rtl-hint">
+            <button id="rtl-toggle" class="btn-rtl">RTL</button>
+        </div>
+
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        function togglePw() {
+            const pw = document.getElementById('password');
+            const ic = document.getElementById('pw-icon');
+            if (pw.type === 'password') {
+                pw.type = 'text';
+                ic.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                pw.type = 'password';
+                ic.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        }
+    </script>
+</body>
+</html>

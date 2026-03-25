@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate | The Collective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Logo">
+                <span class="text-accent">The</span> Collective<span class="text-accent">.</span>
+            </a>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="home-2.html" class="nav-item">Home 2</a>
+                <a href="articles.html" class="nav-item">Investigations</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="plans.html" class="nav-item">Subscribe</a>
+                <a href="login.html" class="nav-item">Login</a>
+                <a href="signup.html" class="nav-item">Signup</a>
+                <a href="dashboard.html" class="nav-item">Dashboard</a>
+                <a href="donate.html" class="btn btn-primary btn-sm active">Support Us</a>
+                <button id="rtl-toggle" class="btn-rtl">RTL</button>
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ── Hero Header ── -->
+        <header class="donate-hero">
+            <div class="donate-hero-overlay"></div>
+            <div class="donate-hero-content container text-center">
+                <span class="donate-tag">Make a Difference</span>
+                <h1 class="donate-hero-title">Fuel the <em>Truth.</em></h1>
+                <p class="donate-hero-sub">Every dollar you give goes directly toward uncovering the facts that power wants hidden. Your support keeps us independent, fearless, and free.</p>
+                <div class="donate-trust-row">
+                    <span><i class="fas fa-lock"></i> SSL Encrypted</span>
+                    <span><i class="fas fa-certificate"></i> 501(c)(3) Non-Profit</span>
+                    <span><i class="fas fa-undo"></i> Cancel Anytime</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ── Donate Box ── -->
+        <section class="donate-section">
+            <div class="donate-card reveal">
+
+                <!-- Toggle -->
+                <div class="freq-toggle">
+                    <button class="freq-btn active" id="btn-monthly" onclick="setFreq('monthly')">Monthly</button>
+                    <button class="freq-btn" id="btn-once" onclick="setFreq('once')">One-Time</button>
+                </div>
+
+                <!-- Amount Grid -->
+                <p class="amount-label">Select an amount</p>
+                <div class="amount-grid">
+                    <button class="amt-btn" onclick="selectAmt(this)">$10</button>
+                    <button class="amt-btn selected" onclick="selectAmt(this)">$25</button>
+                    <button class="amt-btn" onclick="selectAmt(this)">$50</button>
+                    <button class="amt-btn" onclick="selectAmt(this)">$100</button>
+                    <button class="amt-btn" onclick="selectAmt(this)">$250</button>
+                    <input type="number" class="amt-custom" placeholder="Custom $" min="1">
+                </div>
+
+                <!-- Impact Preview -->
+                <div class="impact-preview">
+                    <i class="fas fa-heart-pulse" style="color:#e63946;"></i>
+                    <span id="impact-text">Your <strong>$25/mo</strong> funds a secure tip-box for one month, allowing whistleblowers to safely contact us.</span>
+                </div>
+
+                <!-- Payment Form -->
+                <form class="donate-form" onsubmit="return false;">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label>Full Name</label>
+                            <div class="input-wrap">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Jane Doe" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label>Card Number</label>
+                            <div class="input-wrap">
+                                <i class="far fa-credit-card"></i>
+                                <input type="text" placeholder="#### #### #### ####" maxlength="19" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row two-col">
+                        <div class="form-field">
+                            <label>Expiry Date</label>
+                            <div class="input-wrap">
+                                <i class="fas fa-calendar"></i>
+                                <input type="text" placeholder="MM / YY">
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label>CVC</label>
+                            <div class="input-wrap">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="•••">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="donate-submit">
+                        <i class="fas fa-heart"></i> Complete Secure Donation
+                    </button>
+                </form>
+
+                <!-- Security Note -->
+                <p class="secure-note"><i class="fas fa-shield-alt"></i> 256-bit SSL encrypted &nbsp;·&nbsp; PCI compliant &nbsp;·&nbsp; Tax-deductible</p>
+
+                <!-- Card Icons -->
+                <div class="card-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-stripe"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo mb-sm">
+                        <img src="assets/images/logo.png" alt="Logo">
+                        The Collective<span class="text-accent">.</span>
+                    </a>
+                    <p class="footer-mission mb-md">Holding power accountable through rigorous, data-driven journalism. We are a 501(c)(3) non-profit organization.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="articles.html">Investigations</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="transparency.html">Impact Report</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Organization</h4>
+                    <ul>
+                        <li><a href="about.html">Our Mission</a></li>
+                        <li><a href="contact.html">Secure Tips</a></li>
+                        <li><a href="plans.html">Support Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Investigative Journalism Collective. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        function setFreq(f) {
+            document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('btn-' + f).classList.add('active');
+            updateImpact();
+        }
+        function selectAmt(btn) {
+            document.querySelectorAll('.amt-btn').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            updateImpact();
+        }
+        function updateImpact() {
+            const sel = document.querySelector('.amt-btn.selected');
+            const freq = document.querySelector('.freq-btn.active');
+            const amt = sel ? sel.textContent : '$25';
+            const period = freq && freq.id === 'btn-monthly' ? '/mo' : '';
+            document.getElementById('impact-text').innerHTML =
+                `Your <strong>${amt}${period}</strong> funds a secure tip-box for one month, allowing whistleblowers to safely contact us.`;
+        }
+    </script>
+    <style>
+        /* ── Hero ── */
+        .donate-hero {
+            position: relative; min-height: 420px;
+            display: flex; align-items: center;
+            background: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        }
+        .donate-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(8,8,20,0.9) 0%, rgba(30,5,10,0.78) 100%); }
+        .donate-hero-content { position: relative; z-index: 2; padding: 5rem 1rem; }
+        .donate-tag { display: inline-block; background: rgba(230,57,70,0.18); color: #e63946; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; padding: 0.3rem 1rem; border-radius: 20px; margin-bottom: 1.25rem; }
+        .donate-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); color: #fff; font-weight: 700; line-height: 1.15; margin-bottom: 1rem; }
+        .donate-hero-title em { color: #e63946; font-style: italic; }
+        .donate-hero-sub { color: rgba(255,255,255,0.6); font-size: 1.05rem; max-width: 600px; margin: 0 auto 2rem; line-height: 1.7; }
+        .donate-trust-row { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; color: rgba(255,255,255,0.5); font-size: 0.82rem; }
+        .donate-trust-row i { color: #e63946; margin-right: 0.35rem; }
+
+        /* ── Donate Section ── */
+        .donate-section { display: flex; justify-content: center; padding: 4rem 1.5rem 5rem; background: var(--bg-secondary); }
+
+        .donate-card {
+            width: 100%; max-width: 560px;
+            background: var(--bg-primary);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+            padding: 2.5rem 2.5rem 2rem;
+        }
+
+        /* Frequency toggle */
+        .freq-toggle { display: flex; background: var(--bg-secondary); border-radius: 30px; padding: 4px; margin-bottom: 2rem; }
+        .freq-btn { flex: 1; padding: 0.55rem; background: none; border: none; border-radius: 26px; font-size: 0.88rem; font-weight: 600; color: var(--text-muted); cursor: pointer; transition: all 0.25s; }
+        .freq-btn.active { background: #e63946; color: #fff; box-shadow: 0 4px 14px rgba(230,57,70,0.3); }
+
+        /* Amount grid */
+        .amount-label { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.75rem; }
+        .amount-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; margin-bottom: 1.5rem; }
+        .amt-btn { padding: 0.75rem; border: 1.5px solid var(--border-color); border-radius: 10px; background: var(--bg-secondary); font-size: 1rem; font-weight: 700; color: var(--text-primary); cursor: pointer; transition: all 0.2s; }
+        .amt-btn:hover { border-color: #e63946; color: #e63946; }
+        .amt-btn.selected { background: #e63946; color: #fff; border-color: #e63946; box-shadow: 0 4px 14px rgba(230,57,70,0.3); }
+        .amt-custom { padding: 0.75rem; border: 1.5px solid var(--border-color); border-radius: 10px; background: var(--bg-secondary); font-size: 0.9rem; color: var(--text-primary); outline: none; font-family: 'Inter', sans-serif; transition: border-color 0.2s; }
+        .amt-custom:focus { border-color: #e63946; }
+
+        /* Impact preview */
+        .impact-preview { display: flex; align-items: flex-start; gap: 0.75rem; background: rgba(230,57,70,0.06); border: 1px solid rgba(230,57,70,0.15); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.75rem; font-size: 0.85rem; color: var(--text-primary); line-height: 1.6; }
+
+        /* Form */
+        .donate-form { display: flex; flex-direction: column; gap: 0; }
+        .form-row { margin-bottom: 1rem; }
+        .form-row.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+        .form-field label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.4rem; letter-spacing: 0.3px; }
+        .input-wrap { position: relative; }
+        .input-wrap i { position: absolute; left: 0.9rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.82rem; pointer-events: none; }
+        .input-wrap input { width: 100%; padding: 0.75rem 1rem 0.75rem 2.4rem; border: 1.5px solid var(--border-color); border-radius: 10px; font-size: 0.9rem; font-family: 'Inter', sans-serif; color: var(--text-primary); background: var(--bg-secondary); outline: none; transition: all 0.2s; }
+        .input-wrap input:focus { border-color: #e63946; background: var(--bg-primary); box-shadow: 0 0 0 3px rgba(230,57,70,0.08); }
+        .input-wrap input::placeholder { color: var(--text-muted); opacity: 0.6; }
+
+        /* Submit */
+        .donate-submit { width: 100%; padding: 0.9rem; background: #e63946; color: #fff; font-size: 1rem; font-weight: 700; border: none; border-radius: 12px; cursor: pointer; transition: background 0.25s, transform 0.2s, box-shadow 0.25s; margin-top: 0.5rem; letter-spacing: 0.2px; }
+        .donate-submit:hover { background: #c1121f; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(230,57,70,0.38); }
+        .donate-submit:active { transform: scale(0.98); }
+        .donate-submit i { margin-right: 0.4rem; }
+
+        /* Footer notes */
+        .secure-note { text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 1.25rem; }
+        .secure-note i { color: #e63946; margin-right: 0.25rem; }
+        .card-icons { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; font-size: 1.6rem; opacity: 0.35; color: var(--text-primary); }
+
+        @media (max-width: 600px) {
+            .donate-card { padding: 1.75rem 1.25rem; }
+            .amount-grid { grid-template-columns: repeat(2, 1fr); }
+            .form-row.two-col { grid-template-columns: 1fr; }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparency | The Collective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Logo">
+                <span class="text-accent">The</span> Collective<span class="text-accent">.</span>
+            </a>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="home-2.html" class="nav-item">Home 2</a>
+                <a href="articles.html" class="nav-item">Investigations</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="plans.html" class="nav-item">Subscribe</a>
+                <a href="login.html" class="nav-item">Login</a>
+                <a href="signup.html" class="nav-item">Signup</a>
+                <a href="dashboard.html" class="nav-item">Dashboard</a>
+                <a href="donate.html" class="btn btn-primary btn-sm">Support Us</a>
+                <button id="rtl-toggle" class="btn-rtl">RTL</button>
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="section text-center" style="background: var(--bg-secondary); padding: 6rem 0;">
+            <div class="container">
+                <span class="tag mb-sm">Financial Accountability</span>
+                <h1 class="reveal">Built on <span class="text-accent underline">Transparency.</span></h1>
+                <p class="lead reveal" style="max-width: 800px; margin: 0 auto;">We believe radical honesty is the only way to earn your trust. Here is exactly where our funding comes from and how it is spent.</p>
+            </div>
+        </header>
+
+        <div class="container py-lg">
+            <div class="grid-2 reveal align-center mb-xl">
+                <div class="p-lg card">
+                    <h3>Funding Sources (2025)</h3>
+                    <div class="chart-container mt-md" style="height: 300px; display: flex; align-items: flex-end; gap: 1rem; border-bottom: 2px solid var(--border-color);">
+                        <div class="bar" style="height: 65%; background: var(--primary-color); flex: 1; border-radius: 4px 4px 0 0;" title="Individual Donations: 65%"></div>
+                        <div class="bar" style="height: 20%; background: var(--primary-hover); flex: 1; border-radius: 4px 4px 0 0;" title="Grant Funding: 20%"></div>
+                        <div class="bar" style="height: 10%; background: var(--text-muted); flex: 1; border-radius: 4px 4px 0 0;" title="Corporate Matches: 10%"></div>
+                        <div class="bar" style="height: 5%; background: var(--border-color); flex: 1; border-radius: 4px 4px 0 0;" title="Merchandise: 5%"></div>
+                    </div>
+                    <div class="legend mt-sm" style="display: flex; justify-content: space-between; font-size: 0.8rem;">
+                        <span>Individual (65%)</span>
+                        <span>Grants (20%)</span>
+                        <span>Others (15%)</span>
+                    </div>
+                </div>
+                <div>
+                    <h2>Independence Defined.</h2>
+                    <p>65% of our funding comes directly from readers like you. This ensures that no single entity can influence our editorial direction or suppress our findings.</p>
+                    <ul class="check-list mt-md">
+                        <li><i class="fas fa-check-circle"></i> No private equity ownership</li>
+                        <li><i class="fas fa-check-circle"></i> No government subsidies</li>
+                        <li><i class="fas fa-check-circle"></i> Full disclosure of large donors (> $5,000)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <section class="section bg-secondary p-lg border-radius">
+                <h2 class="text-center mb-lg">Where Your <span class="text-accent">Donations</span> Go.</h2>
+                <div class="grid-3 text-center">
+                    <div>
+                        <i class="fas fa-brain fa-3x text-accent mb-sm"></i>
+                        <h3>70% Journalism</h3>
+                        <p class="small">Field reporting, data analysis, and legal vetting for our deep-dive investigations.</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-shield-alt fa-3x text-accent mb-sm"></i>
+                        <h3>18% Security</h3>
+                        <p class="small">Top-tier encryption, secure drop boxes, and physical safety for our reporters.</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-cog fa-3x text-accent mb-sm"></i>
+                        <h3>12% Operations</h3>
+                        <p class="small">Minimal overhead, website maintenance, and administrative support.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="mt-xl text-center reveal">
+                <h3>View Our Official Reports</h3>
+                <p>Download our audited financial statements and annual impact reports.</p>
+                <div class="flex-center mt-md" style="display: flex; justify-content: center; gap: 1rem;">
+                    <a href="#" class="btn btn-outline btn-sm"><i class="fas fa-file-pdf"></i> 2025 Annual Report</a>
+                    <a href="#" class="btn btn-outline btn-sm"><i class="fas fa-file-pdf"></i> IRS Form 990</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Branding & Social -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo mb-sm">
+                        <img src="assets/images/logo.png" alt="Logo">
+                        The Collective<span class="text-accent">.</span>
+                    </a>
+                    <p class="footer-mission mb-md">
+                        Holding power accountable through rigorous, data-driven journalism. 
+                        We are a 501(c)(3) non-profit organization.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Explore -->
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="articles.html">Investigations</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="transparency.html">Impact Report</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Organization -->
+                <div class="footer-links">
+                    <h4>Organization</h4>
+                    <ul>
+                        <li><a href="about.html">Our Mission</a></li>
+                        <li><a href="contact.html">Secure Tips</a></li>
+                        <li><a href="plans.html">Support Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="footer-bottom">
+
+                <p>&copy; 2026 Investigative Journalism Collective. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <style>
+        .chart-container { position: relative; }
+        .bar { transition: transform 0.5s ease; cursor: pointer; }
+        .bar:hover { transform: scaleY(1.05); }
+        .check-list { list-style: none; padding: 0; }
+        .check-list li { margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.75rem; font-weight: 500; }
+        .underline { text-decoration: underline; text-decoration-color: var(--primary-color); }
+        .active { color: var(--primary-color) !important; font-weight: 700; }
+    </style>
+</body>
+</html>

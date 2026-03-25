@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Truth Not Found | The Collective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body style="background: var(--bg-primary);">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Logo">
+                <span class="text-accent">The</span> Collective<span class="text-accent">.</span>
+            </a>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="home-2.html" class="nav-item">Home 2</a>
+                <a href="articles.html" class="nav-item">Investigations</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="plans.html" class="nav-item">Subscribe</a>
+                <a href="login.html" class="nav-item">Login</a>
+                <a href="signup.html" class="nav-item">Signup</a>
+                <a href="dashboard.html" class="nav-item">Dashboard</a>
+                <a href="donate.html" class="btn btn-primary btn-sm">Support Us</a>
+                <button id="rtl-toggle" class="btn-rtl">RTL</button>
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 404 Content -->
+    <div class="not-found-wrap">
+        <div class="not-found-inner">
+            <!-- Decorative number -->
+            <div class="err-number">404</div>
+
+            <!-- Badge -->
+            <span class="err-badge">Page Not Found</span>
+
+            <!-- Headline -->
+            <h1 class="err-title">Page <span class="text-accent">[REDACTED]</span></h1>
+
+            <!-- Description -->
+            <p class="err-desc">The truth is out there, but it's not on this page. The link you followed might be broken, or the investigation has been moved to our high-security archive.</p>
+
+            <!-- Actions -->
+            <div class="err-actions">
+                <a href="index.html" class="err-btn primary"><i class="fas fa-home"></i> Return Home</a>
+                <a href="articles.html" class="err-btn outline"><i class="fas fa-book-open"></i> Explore Archives</a>
+            </div>
+
+            <!-- Quote -->
+            <blockquote class="err-quote">
+                &ldquo;In a time of deceit, telling the truth is a revolutionary act.&rdquo;
+                <cite>— George Orwell</cite>
+            </blockquote>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Branding & Social -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo mb-sm">
+                        <img src="assets/images/logo.png" alt="Logo">
+                        The Collective<span class="text-accent">.</span>
+                    </a>
+                    <p class="footer-mission mb-md">
+                        Holding power accountable through rigorous, data-driven journalism. 
+                        We are a 501(c)(3) non-profit organization.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Explore -->
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="articles.html">Investigations</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="transparency.html">Impact Report</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Organization -->
+                <div class="footer-links">
+                    <h4>Organization</h4>
+                    <ul>
+                        <li><a href="about.html">Our Mission</a></li>
+                        <li><a href="contact.html">Secure Tips</a></li>
+                        <li><a href="plans.html">Support Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="footer-bottom">
+
+                <p>&copy; 2026 Investigative Journalism Collective. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <style>
+        /* 404 layout */
+        .not-found-wrap {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1.5rem;
+        }
+        .not-found-inner {
+            max-width: 580px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        /* Big 404 */
+        .err-number {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: clamp(7rem, 20vw, 11rem);
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            text-shadow: 6px 6px 0 var(--bg-tertiary);
+            letter-spacing: -4px;
+            margin-bottom: 1.25rem;
+            animation: floatNum 4s ease-in-out infinite;
+        }
+        @keyframes floatNum {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-10px); }
+        }
+
+        /* Badge */
+        .err-badge {
+            display: inline-block;
+            background: rgba(var(--primary-rgb, 230,57,70), 0.1);
+            color: var(--primary-color);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        /* Title */
+        .err-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        /* Description */
+        .err-desc {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+            max-width: 480px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Buttons */
+        .err-actions {
+            display: flex;
+            justify-content: center;
+            gap: 0.85rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        .err-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .err-btn.primary {
+            background: #e63946;
+            color: #fff;
+            border: 2px solid #e63946;
+        }
+        .err-btn.primary:hover {
+            background: #c1121f;
+            border-color: #c1121f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(230,57,70,0.32);
+        }
+        .err-btn.outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+        .err-btn.outline:hover {
+            border-color: #e63946;
+            color: #e63946;
+            transform: translateY(-2px);
+        }
+
+        /* Quote */
+        .err-quote {
+            border-left: 3px solid var(--primary-color);
+            padding: 0.5rem 1.25rem;
+            text-align: left;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            line-height: 1.65;
+            margin: 0;
+            opacity: 0.6;
+        }
+        .err-quote cite {
+            display: block;
+            font-size: 0.78rem;
+            font-style: normal;
+            font-weight: 600;
+            margin-top: 0.35rem;
+            color: var(--text-muted);
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Content | The Collective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Logo">
+                <span class="text-accent">The</span> Collective<span class="text-accent">.</span>
+            </a>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="home-2.html" class="nav-item">Home 2</a>
+                <a href="articles.html" class="nav-item">Investigations</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="plans.html" class="nav-item">Subscribe</a>
+                <a href="login.html" class="nav-item">Login</a>
+                <a href="signup.html" class="nav-item">Signup</a>
+                <a href="dashboard.html" class="nav-item">Dashboard</a>
+                <a href="donate.html" class="btn btn-primary btn-sm">Support Us</a>
+                <button id="rtl-toggle" class="btn-rtl">RTL</button>
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Header -->
+        <section class="section py-0 bg-dark overflow-hidden position-relative" style="min-height: 70vh; display: flex; align-items: center; justify-content: center;">
+            <div style="position: absolute; inset: 0; background: linear-gradient(rgba(10,10,12,0.8), rgba(10,10,12,0.95)), url('https://images.unsplash.com/photo-1516322311496-e24dc5cf4f47?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; z-index: 0;"></div>
+            <div class="container position-relative py-xl text-center" style="z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <span class="tag mb-md border-accent text-accent bg-transparent" style="display: inline-block;">Subscriber Vault</span>
+                <h1 class="display-1 text-white mb-md font-serif" style="text-align: center; width: 100%;">Exclusive <span class="text-accent italic">Content.</span></h1>
+                <p class="lead text-muted mx-auto text-center" style="max-width: 600px; text-align: center; margin: 0 auto;">Access unredacted reports, early-release investigations, and the raw datasets behind our most significant global exposes.</p>
+            </div>
+        </section>
+
+        <!-- Section 1: Premium Briefings Grid -->
+        <section class="section bg-secondary">
+            <div class="container">
+                <div class="section-header text-center mb-xl reveal" style="display: flex; flex-direction: column; align-items: center;">
+                    <h2 class="display-3 font-serif">The Inner <span class="text-accent italic">Circle.</span></h2>
+                    <p class="text-muted mx-auto text-center" style="max-width: 600px; margin: 0 auto 3rem auto;">Embargoed and classified reports exclusively available to our supporting members.</p>
+                </div>
+
+                <div class="grid-3">
+                    <!-- Card 1 -->
+                    <div class="card reveal" style="transition: transform 0.4s ease; border: 1px solid var(--border-color);">
+                        <div class="card-img-wrapper" style="position: relative;">
+                            <span class="tag-floating" style="position: absolute; top: 1rem; right: 1rem; background: var(--primary-color); color: #fff; padding: 0.3rem 0.8rem; font-size: 0.75rem; font-weight: 700; border-radius: 4px; z-index: 10;"><i class="fas fa-lock mr-xs"></i> CLASSIFIED</span>
+                            <img src="https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&fit=crop&w=600&q=80" alt="Financial" style="width: 100%; height: 240px; object-fit: cover;">
+                        </div>
+                        <div class="p-md text-center bg-white">
+                            <h3 class="h4 font-serif mb-sm">The Sovereign Accounts</h3>
+                            <p class="small text-muted mb-0">Unredacted bank logs linking state funds to private offshore holding companies.</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="card reveal" style="transition: transform 0.4s ease; border: 1px solid var(--border-color);">
+                        <div class="card-img-wrapper" style="position: relative;">
+                            <span class="tag-floating" style="position: absolute; top: 1rem; right: 1rem; background: var(--text-primary); color: #fff; padding: 0.3rem 0.8rem; font-size: 0.75rem; font-weight: 700; border-radius: 4px; z-index: 10;"><i class="fas fa-clock mr-xs"></i> EARLY ACCESS</span>
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Tech" style="width: 100%; height: 240px; object-fit: cover;">
+                        </div>
+                        <div class="p-md text-center bg-white">
+                            <h3 class="h4 font-serif mb-sm">Project: Chimera</h3>
+                            <p class="small text-muted mb-0">Advance briefing on our upcoming investigation into military-grade spyware.</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="card reveal" style="transition: transform 0.4s ease; border: 1px solid var(--border-color);">
+                        <div class="card-img-wrapper" style="position: relative;">
+                            <span class="tag-floating" style="position: absolute; top: 1rem; right: 1rem; background: var(--primary-color); color: #fff; padding: 0.3rem 0.8rem; font-size: 0.75rem; font-weight: 700; border-radius: 4px; z-index: 10;"><i class="fas fa-database mr-xs"></i> RAW DATA</span>
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Data" style="width: 100%; height: 240px; object-fit: cover;">
+                        </div>
+                        <div class="p-md text-center bg-white">
+                            <h3 class="h4 font-serif mb-sm">The Carbon Ledger</h3>
+                            <p class="small text-muted mb-0">Download the complete 50GB dataset mapping fraudulent carbon offsets globally.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Methodology/Behind the Scenes -->
+        <section class="section bg-primary overflow-hidden">
+            <div class="container grid-2 align-center gap-xl">
+                <div class="reveal">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Encrypted Screen" class="border-radius shadow-xl" style="border: 4px solid var(--border-color); width: 100%;">
+                </div>
+                <div class="reveal-right">
+                    <span class="tag mb-sm border-accent text-accent bg-transparent" style="display: inline-block;">Members Only</span>
+                    <h2 class="display-3 font-serif mb-md">Behind the <span class="text-accent italic">Curtain.</span></h2>
+                    <p class="lead text-muted mb-lg">Gain unprecedented insight into the clandestine world of investigative journalism. We provide our members with the raw interview transcripts, cryptographic verification keys, and field notes that power our reports.</p>
+                    <ul class="d-flex flex-column gap-sm" style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                        <li style="display: flex; align-items: center; gap: 0.5rem;" class="text-dark font-bold"><i class="fas fa-check-circle text-accent"></i> Full Unredacted Dossiers</li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;" class="text-dark font-bold"><i class="fas fa-check-circle text-accent"></i> Direct Q&A with Lead Investigators</li>
+                        <li style="display: flex; align-items: center; gap: 0.5rem;" class="text-dark font-bold"><i class="fas fa-check-circle text-accent"></i> Cryptographically Signed Evidence</li>
+                    </ul>
+                    <a href="about.html" class="btn btn-primary">Learn Our Methodology &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Upgrade CTA -->
+        <section class="section text-center py-xl" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%); border-top: 1px solid var(--border-color);">
+            <div class="container reveal mx-auto" style="max-width: 700px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <div class="text-accent mb-md" style="width: 80px; height: 80px; background: rgba(var(--primary-rgb), 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                    <i class="fas fa-key fa-2x"></i>
+                </div>
+                <h2 class="display-3 font-serif mb-sm" style="text-align: center; width: 100%;">Unlock the <span class="text-accent italic">Vault.</span></h2>
+                <p class="lead text-muted mb-lg mx-auto" style="max-width: 600px;">Your support directly funds our global operations. Upgrade your account today for instantaneous access to our entire secure archive.</p>
+                <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <a href="plans.html" class="btn btn-primary btn-lg shadow-md">Upgrade Membership</a>
+                    <a href="login.html" class="btn btn-outline btn-lg">Member Login</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Branding & Social -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo mb-sm">
+                        <img src="assets/images/logo.png" alt="Logo">
+                        The Collective<span class="text-accent">.</span>
+                    </a>
+                    <p class="footer-mission mb-md">
+                        Holding power accountable through rigorous, data-driven journalism. 
+                        We are a 501(c)(3) non-profit organization.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Explore -->
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="articles.html">Investigations</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="transparency.html">Impact Report</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Organization -->
+                <div class="footer-links">
+                    <h4>Organization</h4>
+                    <ul>
+                        <li><a href="about.html">Our Mission</a></li>
+                        <li><a href="contact.html">Secure Tips</a></li>
+                        <li><a href="plans.html">Support Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="footer-bottom">
+
+                <p>&copy; 2026 Investigative Journalism Collective. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <style>
+        .tag-floating { font-size: 0.75rem; }
+    </style>
+</body>
+</html>
