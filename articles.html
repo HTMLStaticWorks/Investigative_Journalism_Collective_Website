@@ -15,48 +15,47 @@
     <nav class="navbar">
         <div class="container nav-content">
             <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Logo">
-                <span class="text-accent">The</span> Collective<span class="text-accent">.</span>
+                <i class="fas fa-globe-americas"></i>
+                <span class="brand-name">The <span class="brand-accent">Collective.</span></span>
             </a>
-
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            
             <div class="nav-links" id="nav-links">
                 <a href="index.html" class="nav-item">Home</a>
                 <a href="home-2.html" class="nav-item">Home 2</a>
                 <a href="articles.html" class="nav-item active">Investigations</a>
                 <a href="about.html" class="nav-item">About</a>
+                <a href="contact.html" class="nav-item">Contact</a>
                 <a href="plans.html" class="nav-item">Subscribe</a>
                 <a href="login.html" class="nav-item">Login</a>
                 <a href="signup.html" class="nav-item">Signup</a>
                 <a href="dashboard.html" class="nav-item">Dashboard</a>
-                <a href="donate.html" class="btn btn-primary btn-sm">Support Us</a>
+                <a href="donate.html" class="btn btn-primary btn-sm nav-mobile-cta">Support Us</a>
+            </div>
+
+            <div class="nav-utils">
+                <a href="donate.html" class="btn btn-primary btn-sm nav-desktop-cta">Support Us</a>
                 <button id="rtl-toggle" class="btn-rtl">RTL</button>
                 <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
     <main>
-        <!-- Split Header Section -->
-        <section class="investigations-hero section py-0 bg-dark overflow-hidden">
-            <div class="container-fluid p-0">
-                <div class="grid-2 align-center">
-                    <div class="reveal" style="padding: 6rem 5% 6rem 10%; width: 100%;">
-                        <span class="tag mb-sm" style="display: inline-block;">Unveiling the Hidden Truth</span>
-                        <h1 class="display-1 mb-md text-white lh-tight">Deep-Dive <br><span class="text-accent italic">Investigations.</span></h1>
-                        <p class="lead text-muted mb-lg" style="max-width: 550px; line-height: 1.6;">“Our investigations span continents and industries, driven by a commitment to accountability and transparency.”</p>
-                        <div class="flex gap-md mt-lg">
-                            <a href="about.html" class="btn btn-primary">Our Mission</a>
-                            <a href="transparency.html" class="btn btn-outline">Our Methodology</a>
-                        </div>
-                    </div>
-                    <div class="hero-image-side reveal-right h-100">
-                        <img src="assets/images/investigations_hero.png" alt="Investigative Desk" class="img-fill-cover" style="min-height: 600px; filter: grayscale(0.2) contrast(1.1);">
+        <!-- Redesigned Light-Mode Hero Section -->
+        <section class="investigations-hero-light section py-xl bg-primary">
+            <div class="container text-center">
+                <div class="reveal">
+                    <span class="hero-tag-light mb-sm">Unveiling the Hidden Truth</span>
+                    <h1 class="display-1 mb-md text-accent">Investigations.</h1>
+                    <p class="hero-subtitle-light mb-lg">“Our investigations span continents and industries, driven by a commitment to accountability and transparency.”</p>
+                    <div class="flex-center gap-md mt-lg">
+                        <a href="about.html" class="btn btn-primary">Our Mission</a>
+                        <a href="transparency.html" class="btn btn-outline-dark">Our Methodology</a>
                     </div>
                 </div>
             </div>
@@ -75,24 +74,24 @@
                     <!-- Case 1 -->
                     <div class="card case-card reveal">
                         <div class="card-img-wrapper">
-                            <span class="tag-floating text-white" style="background: var(--primary-color);">CLASSIFIED</span>
+                            <span class="tag-floating text-white" style="background: var(--primary-color);">INVESTIGATION</span>
                             <img src="https://images.unsplash.com/photo-1584483766114-2cea6facdf57?auto=format&fit=crop&w=600&q=80" alt="Healthcare Investigation">
                         </div>
                         <div class="p-md bg-white text-center">
-                            <h3 class="h4 font-serif text-dark mb-xs">Profit Over Patients</h3>
-                            <p class="small text-muted mb-0">Private equity's dismantling of rural healthcare infrastructure.</p>
+                            <h3 class="h4 font-serif text-black-prominent mb-xs">Profit Over Patients</h3>
+                            <p class="small text-black-prominent mb-0">Private equity's dismantling of rural healthcare infrastructure.</p>
                         </div>
                     </div>
                     
                     <!-- Case 2 -->
                     <div class="card case-card reveal">
                         <div class="card-img-wrapper">
-                            <span class="tag-floating text-white" style="background: var(--text-primary);">NEW LEAK</span>
+                            <span class="tag-floating text-white" style="background: #1a1a1a;">NEW LEAD</span>
                             <img src="https://images.unsplash.com/photo-1610337673044-720471f83677?auto=format&fit=crop&w=600&q=80" alt="Environmental Investigation">
                         </div>
                         <div class="p-md bg-white text-center">
-                            <h3 class="h4 font-serif text-dark mb-xs">The Smokescreen</h3>
-                            <p class="small text-muted mb-0">Exposing the massive fraud in global conservation carbon offsets.</p>
+                            <h3 class="h4 font-serif text-black-prominent mb-xs">The Smokescreen</h3>
+                            <p class="small text-black-prominent mb-0">Exposing the massive fraud in global conservation carbon offsets.</p>
                         </div>
                     </div>
                     
@@ -103,8 +102,8 @@
                             <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=600&q=80" alt="Tech Investigation">
                         </div>
                         <div class="p-md bg-white text-center">
-                            <h3 class="h4 font-serif text-dark mb-xs">Silicon Shadows</h3>
-                            <p class="small text-muted mb-0">How global sanctions bypass fueled a covert microchip arms race.</p>
+                            <h3 class="h4 font-serif text-black-prominent mb-xs">Silicon Shadows</h3>
+                            <p class="small text-black-prominent mb-0">How global sanctions bypass fueled a covert microchip arms race.</p>
                         </div>
                     </div>
 
@@ -115,20 +114,20 @@
                             <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=600&q=80" alt="Justice Investigation">
                         </div>
                         <div class="p-md bg-white text-center">
-                            <h3 class="h4 font-serif text-dark mb-xs">The Cargo Trap</h3>
-                            <p class="small text-muted mb-0">Uncovering human trafficking networks in global maritime trade.</p>
+                            <h3 class="h4 font-serif text-black-prominent mb-xs">The Cargo Trap</h3>
+                            <p class="small text-black-prominent mb-0">Uncovering human trafficking networks in global maritime trade.</p>
                         </div>
                     </div>
 
                     <!-- Case 5 -->
                     <div class="card case-card reveal">
                         <div class="card-img-wrapper">
-                            <span class="tag-floating text-white" style="background: var(--text-primary);">ONGOING</span>
+                            <span class="tag-floating text-white" style="background: #1a1a1a;">ONGOING</span>
                             <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=600&q=80" alt="Mining Investigation">
                         </div>
                         <div class="p-md bg-white text-center">
-                            <h3 class="h4 font-serif text-dark mb-xs">The Lithium Scramble</h3>
-                            <p class="small text-muted mb-0">The hidden environmental costs of the green energy gold rush.</p>
+                            <h3 class="h4 font-serif text-black-prominent mb-xs">The Lithium Scramble</h3>
+                            <p class="small text-black-prominent mb-0">The hidden environmental costs of the green energy gold rush.</p>
                         </div>
                     </div>
 
@@ -139,8 +138,8 @@
                             <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="AI Ethics">
                         </div>
                         <div class="p-md bg-white text-center">
-                            <h3 class="h4 font-serif text-dark mb-xs">Ghost in the Machine</h3>
-                            <p class="small text-muted mb-0">How algorithmic bias is quietly shaping judicial outcomes globally.</p>
+                            <h3 class="h4 font-serif text-black-prominent mb-xs">Ghost in the Machine</h3>
+                            <p class="small text-black-prominent mb-0">How algorithmic bias is quietly shaping judicial outcomes globally.</p>
                         </div>
                     </div>
                 </div>
@@ -206,12 +205,65 @@
         </section>
 
         <style>
-            /* Specific CSS for new sections */
-            .case-card { transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid rgba(0,0,0,0.05); overflow: hidden; cursor: pointer; }
-            .case-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
-            .case-card .card-img-wrapper img { transition: transform 0.6s ease; height: 260px; width: 100%; object-fit: cover; }
-            .case-card:hover .card-img-wrapper img { transform: scale(1.05); }
-            .tag-floating { position: absolute; top: 1rem; right: 1rem; padding: 0.35rem 0.85rem; font-size: 0.75rem; font-weight: 700; border-radius: 4px; z-index: 5; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+            /* Revised Case Cards with Glitch Banners & High Contrast Black Text */
+            .case-card { 
+                transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+                border: 1px solid rgba(0,0,0,0.08); 
+                overflow: hidden; 
+                cursor: pointer; 
+                background: #ffffff;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            }
+            .case-card:hover { 
+                transform: translateY(-8px); 
+                box-shadow: 0 15px 35px rgba(0,0,0,0.08); 
+                border-color: var(--primary-color);
+            }
+            .case-card .card-img-wrapper {
+                position: relative;
+                overflow: hidden;
+            }
+            .case-card .card-img-wrapper::after {
+                content: "";
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                            linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+                background-size: 100% 2px, 3px 100%;
+                pointer-events: none;
+                z-index: 2;
+                opacity: 0.4;
+            }
+            .case-card .card-img-wrapper img { 
+                transition: transform 0.6s ease; 
+                height: 200px; /* Shortened for "small box" feel */
+                width: 100%; 
+                object-fit: cover; 
+                filter: brightness(1.05) contrast(1.1) grayscale(0.2);
+            }
+            .case-card:hover .card-img-wrapper img { transform: scale(1.03); filter: brightness(1.1) contrast(1.1) grayscale(0); }
+            
+            .text-black-prominent {
+                color: #000000 !important;
+                font-weight: 500;
+            }
+            h3.text-black-prominent {
+                font-weight: 700;
+            }
+
+            .tag-floating { 
+                position: absolute; 
+                top: 1rem; 
+                right: 1rem; 
+                padding: 0.35rem 0.85rem; 
+                font-size: 0.7rem; 
+                font-weight: 800; 
+                border-radius: 4px; 
+                z-index: 10; 
+                letter-spacing: 1.5px; 
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+                text-transform: uppercase;
+            }
             
             .border-left-accent { border-left: 4px solid var(--primary-color); }
             .border-left-dark { border-left: 4px solid var(--text-primary); }
@@ -260,7 +312,7 @@
                 <div class="footer-brand">
                     <a href="index.html" class="logo mb-sm">
                         <img src="assets/images/logo.png" alt="Logo">
-                        The Collective<span class="text-accent">.</span>
+                        <span class="brand-name"><span class="brand-accent">The</span> Collective<span class="brand-accent">.</span></span>
                     </a>
                     <p class="footer-mission mb-md">
                         Holding power accountable through rigorous, data-driven journalism. 
@@ -295,6 +347,15 @@
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
+
+                <div class="footer-newsletter">
+                    <h4>Stay Informed</h4>
+                    <p>Get the latest investigations and news delivered to your inbox.</p>
+                    <form class="newsletter-inline">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                    </form>
+                </div>
             </div>
 
             <!-- Bottom Row -->
@@ -305,6 +366,9 @@
         </div>
     </footer>
 
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <script src="assets/js/main.js"></script>
     <style>
         .tag-sm { background: var(--bg-tertiary); color: var(--text-muted); padding: 0.1rem 0.5rem; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; border-radius: 2px; display: inline-block; }

@@ -16,28 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // 0. Navbar Toggle (Hamburger)
     const navToggle = document.getElementById('nav-toggle');
     const navLinksContainer = document.getElementById('nav-links');
-
     if (navToggle && navLinksContainer) {
-        navToggle.addEventListener('click', () => {
-            navLinksContainer.classList.toggle('active');
-            // Toggle icon between bars and times
-            const icon = navToggle.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
+        const toggleMenu = (e) => {
+            if (e && e.type === 'touchstart') {
+                e.preventDefault();
             }
-        });
+            navLinksContainer.classList.toggle('active');
+        };
+
+        navToggle.addEventListener('click', toggleMenu);
+        // Use passive: false to allow preventDefault
+        navToggle.addEventListener('touchstart', toggleMenu, { passive: false });
 
         // Close menu when clicking a link
         const navItems = navLinksContainer.querySelectorAll('.nav-item, .btn');
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 navLinksContainer.classList.remove('active');
-                const icon = navToggle.querySelector('i');
-                if (icon) {
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-times');
-                }
             });
         });
     }
@@ -107,40 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const rtlToggles = document.querySelectorAll('#rtl-toggle, .rtl-toggle');
     const isRTL = localStorage.getItem('rtl') === 'true';
 
-    // Swap navbar logo position for RTL — DOM swap + forced inline !important styles
-    function swapNavbarLogo(rtl) {
-        const navContent = document.querySelector('.nav-content');
-        if (!navContent) return;
-        const logo = navContent.querySelector('a.logo');
-        const navLinks = navContent.querySelector('.nav-links');
-        if (!logo || !navLinks) return;
-
-        if (rtl) {
-            // 1. DOM swap: move logo to end of flex container → RIGHT side
-            navContent.appendChild(logo);
-            // 2. Force inline !important styles so no CSS can override
-            logo.style.setProperty('order', '99', 'important');
-            logo.style.setProperty('margin-left', 'auto', 'important');
-            navLinks.style.setProperty('order', '1', 'important');
-            navLinks.style.setProperty('margin-left', '0', 'important');
-            navContent.style.setProperty('flex-direction', 'row', 'important');
-            navContent.style.setProperty('justify-content', 'space-between', 'important');
-        } else {
-            // 1. DOM swap: move logo back to start → LEFT side
-            navContent.insertBefore(logo, navLinks);
-            // 2. Reset all inline styles
-            logo.style.removeProperty('order');
-            logo.style.removeProperty('margin-left');
-            navLinks.style.removeProperty('order');
-            navLinks.style.removeProperty('margin-left');
-            navContent.style.removeProperty('flex-direction');
-            navContent.style.removeProperty('justify-content');
-        }
-    }
-
     if (isRTL) {
         document.documentElement.setAttribute('dir', 'rtl');
-        swapNavbarLogo(true);
         updateRTLButtons(true);
     }
 
@@ -150,12 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentRTL) {
                 document.documentElement.removeAttribute('dir');
                 localStorage.setItem('rtl', 'false');
-                swapNavbarLogo(false);
                 updateRTLButtons(false);
             } else {
                 document.documentElement.setAttribute('dir', 'rtl');
                 localStorage.setItem('rtl', 'true');
-                swapNavbarLogo(true);
                 updateRTLButtons(true);
             }
         });
@@ -304,4 +265,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     setupCardTilt();
+
+    // 9. Scroll to Top Logic
+    const scrollTopBtn = document.getElementById('scroll-top');
+    if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });

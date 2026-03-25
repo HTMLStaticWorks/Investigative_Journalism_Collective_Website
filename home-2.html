@@ -16,29 +16,33 @@
     <nav class="navbar">
         <div class="container nav-content">
             <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Logo">
-                <span class="text-accent">The</span> Collective<span class="text-accent">.</span>
+                <i class="fas fa-globe-americas"></i>
+                <span class="brand-name">The <span class="brand-accent">Collective.</span></span>
             </a>
-
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            
             <div class="nav-links" id="nav-links">
                 <a href="index.html" class="nav-item">Home</a>
                 <a href="home-2.html" class="nav-item active">Home 2</a>
                 <a href="articles.html" class="nav-item">Investigations</a>
                 <a href="about.html" class="nav-item">About</a>
+                <a href="contact.html" class="nav-item">Contact</a>
                 <a href="plans.html" class="nav-item">Subscribe</a>
                 <a href="login.html" class="nav-item">Login</a>
                 <a href="signup.html" class="nav-item">Signup</a>
                 <a href="dashboard.html" class="nav-item">Dashboard</a>
-                <a href="donate.html" class="btn btn-primary btn-sm">Support Us</a>
+                <a href="donate.html" class="btn btn-primary btn-sm nav-mobile-cta">Support Us</a>
+            </div>
+
+            <div class="nav-utils">
+                <a href="donate.html" class="btn btn-primary btn-sm nav-desktop-cta">Support Us</a>
                 <button id="rtl-toggle" class="btn-rtl">RTL</button>
                 <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
@@ -140,30 +144,50 @@
             </div>
         </section>
 
-        <!-- Pulse Highlights (Theme Adaptive) -->
-        <section class="section pulse-highlights py-xl">
-            <div class="container text-center reveal">
-                <h2 class="mb-xl">The Collective <span class="text-accent italic">Pulse.</span></h2>
-                <div class="grid-4 pulse-grid">
-                    <div class="card pulse-card reveal">
-                        <i class="fas fa-microscope pulse-icon"></i>
-                        <h3>Field Research</h3>
-                        <p>12,400+ hours of onsite investigations this year alone.</p>
+        <!-- Investigative Dark Section (Custom Design) -->
+        <section class="investigative-dark-section section">
+            <div class="container relative" style="z-index: 2;">
+                <div class="section-header text-center mb-xl">
+                    <h2 class="section-title text-white">The Collective <span class="text-accent italic">Operations.</span></h2>
+                    <p class="text-muted">High-impact transparency through rigorous methodology.</p>
+                </div>
+
+                <div class="investigative-stack max-w-lg mx-auto">
+                    <!-- Card 1: Field Research -->
+                    <div class="investigative-card reveal">
+                        <div class="investigative-img-wrapper">
+                            <img src="assets/images/field_research_asset.png" alt="Field Research">
+                        </div>
+                        <div class="investigative-content">
+                            <h3>Field Research</h3>
+                            <p>12,400+ hours of on-site investigations this year alone.</p>
+                        </div>
                     </div>
-                    <div class="card pulse-card reveal">
-                        <i class="fas fa-file-contract pulse-icon"></i>
-                        <h3>FOIA Requests</h3>
-                        <p>850+ successful public record filings revealing hidden truths.</p>
+
+                    <div class="red-divider"></div>
+
+                    <!-- Card 2: FOIA Requests -->
+                    <div class="investigative-card reveal">
+                        <div class="investigative-img-wrapper">
+                            <img src="assets/images/foia_requests_asset.png" alt="FOIA Requests">
+                        </div>
+                        <div class="investigative-content">
+                            <h3>FOIA Requests</h3>
+                            <p>880+ successful public record requests revealing hidden truths.</p>
+                        </div>
                     </div>
-                    <div class="card pulse-card reveal">
-                        <i class="fas fa-shield-alt pulse-icon"></i>
-                        <h3>Whistleblower Protection</h3>
-                        <p>Direct legal support for 45+ courageous insiders.</p>
-                    </div>
-                    <div class="card pulse-card reveal">
-                        <i class="fas fa-globe-americas pulse-icon"></i>
-                        <h3>Global Reach</h3>
-                        <p>Active reporting in 28 countries across 5 continents.</p>
+
+                    <div class="red-divider"></div>
+
+                    <!-- Card 3: Whistleblower Protection -->
+                    <div class="investigative-card reveal">
+                        <div class="investigative-img-wrapper">
+                            <img src="assets/images/whistleblower_protection_asset.png" alt="Whistleblower Protection">
+                        </div>
+                        <div class="investigative-content">
+                            <h3>Whistleblower Protection</h3>
+                            <p>Direct legal support for 40+ courageous insiders.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -193,7 +217,7 @@
                 <div class="footer-brand">
                     <a href="index.html" class="logo mb-sm">
                         <img src="assets/images/logo.png" alt="Logo">
-                        The Collective<span class="text-accent">.</span>
+                        <span class="brand-name"><span class="brand-accent">The</span> Collective<span class="brand-accent">.</span></span>
                     </a>
                     <p class="footer-mission mb-md">
                         Holding power accountable through rigorous, data-driven journalism. 
@@ -228,6 +252,15 @@
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
+
+                <div class="footer-newsletter">
+                    <h4>Stay Informed</h4>
+                    <p>Get the latest investigations and news delivered to your inbox.</p>
+                    <form class="newsletter-inline">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                    </form>
+                </div>
             </div>
 
             <!-- Bottom Row -->
@@ -238,6 +271,9 @@
         </div>
     </footer>
 
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <script src="assets/js/main.js"></script>
     <style>
         /* Home 2 Redesign Styles */

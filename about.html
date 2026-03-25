@@ -15,29 +15,33 @@
     <nav class="navbar">
         <div class="container nav-content">
             <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Logo">
-                <span class="text-accent">The</span> Collective<span class="text-accent">.</span>
+                <i class="fas fa-globe-americas"></i>
+                <span class="brand-name">The <span class="brand-accent">Collective.</span></span>
             </a>
-
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            
             <div class="nav-links" id="nav-links">
                 <a href="index.html" class="nav-item">Home</a>
                 <a href="home-2.html" class="nav-item">Home 2</a>
                 <a href="articles.html" class="nav-item">Investigations</a>
                 <a href="about.html" class="nav-item active">About</a>
+                <a href="contact.html" class="nav-item">Contact</a>
                 <a href="plans.html" class="nav-item">Subscribe</a>
                 <a href="login.html" class="nav-item">Login</a>
                 <a href="signup.html" class="nav-item">Signup</a>
                 <a href="dashboard.html" class="nav-item">Dashboard</a>
-                <a href="donate.html" class="btn btn-primary btn-sm">Support Us</a>
+                <a href="donate.html" class="btn btn-primary btn-sm nav-mobile-cta">Support Us</a>
+            </div>
+
+            <div class="nav-utils">
+                <a href="donate.html" class="btn btn-primary btn-sm nav-desktop-cta">Support Us</a>
                 <button id="rtl-toggle" class="btn-rtl">RTL</button>
                 <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
@@ -78,19 +82,19 @@
                 <h2 class="text-center mb-lg">The <span class="text-accent">Journalists.</span></h2>
                 <div class="grid-3">
                     <div class="card p-md text-center reveal">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&h=400&q=80" alt="Editor" style="width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.5rem; object-fit: cover;">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=500&h=500&fit=crop&crop=faces" alt="Marcus Vance - Executive Editor" style="width: 250px; height: 250px; border-radius: 50%; margin: 0 auto 1.5rem; object-fit: cover; object-position: center center; display: block; border: 4px solid var(--bg-secondary); box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
                         <h3>Marcus Vance</h3>
                         <p class="text-accent font-bold small uppercase">Executive Editor</p>
                         <p class="small">Former Pulitzer-winning correspondent specializing in global finance.</p>
                     </div>
                     <div class="card p-md text-center reveal">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&h=400&q=80" alt="Journalist" style="width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.5rem; object-fit: cover;">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=500&h=500&fit=crop&crop=faces" alt="Elena Rodriguez - Senior Investigative Tech" style="width: 250px; height: 250px; border-radius: 50%; margin: 0 auto 1.5rem; object-fit: cover; object-position: center center; display: block; border: 4px solid var(--bg-secondary); box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
                         <h3>Elena Rodriguez</h3>
                         <p class="text-accent font-bold small uppercase">Senior Investigative Tech</p>
                         <p class="small">Specializes in cyber-surveillance and data privacy breaches.</p>
                     </div>
                     <div class="card p-md text-center reveal">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&h=400&q=80" alt="Journalist" style="width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.5rem; object-fit: cover;">
+                        <div style="width: 250px; height: 250px; border-radius: 50%; margin: 0 auto 1.5rem; background-image: url('https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=500&h=500&fit=crop&crop=faces'); background-size: cover; background-position: center; border: 4px solid var(--bg-secondary); box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: block;"></div>
                         <h3>David Chen</h3>
                         <p class="text-accent font-bold small uppercase">Environmental Lead</p>
                         <p class="small">Award-winning photojournalist covering the frontlines of climate change.</p>
@@ -199,7 +203,7 @@
                 <div class="footer-brand">
                     <a href="index.html" class="logo mb-sm">
                         <img src="assets/images/logo.png" alt="Logo">
-                        The Collective<span class="text-accent">.</span>
+                        <span class="brand-name"><span class="brand-accent">The</span> Collective<span class="brand-accent">.</span></span>
                     </a>
                     <p class="footer-mission mb-md">
                         Holding power accountable through rigorous, data-driven journalism. 
@@ -234,6 +238,15 @@
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
+
+                <div class="footer-newsletter">
+                    <h4>Stay Informed</h4>
+                    <p>Get the latest investigations and news delivered to your inbox.</p>
+                    <form class="newsletter-inline">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                    </form>
+                </div>
             </div>
 
             <!-- Bottom Row -->
@@ -244,6 +257,9 @@
         </div>
     </footer>
 
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <script src="assets/js/main.js"></script>
     <style>
         .align-center { align-items: center; }
