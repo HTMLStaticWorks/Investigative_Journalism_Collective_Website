@@ -25,7 +25,7 @@
     <nav class="navbar">
         <div class="container nav-content">
             <a href="index.html" class="logo">
-                <i class="fas fa-globe-americas"></i>
+                <img src="assets/images/logo.png" alt="Collective Logo">
                 <span class="brand-name">The <span class="brand-accent">Collective.</span></span>
             </a>
             <div class="nav-links" id="nav-links">
@@ -35,10 +35,12 @@
                 <a href="about.html" class="nav-item">About</a>
                 <a href="contact.html" class="nav-item">Contact</a>
                 <a href="plans.html" class="nav-item">Subscribe</a>
-                <a href="login.html" class="nav-item">Login</a>
-                <a href="signup.html" class="nav-item">Signup</a>
+                <a href="login.html" class="btn btn-sm btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-sm btn-primary">Signup</a>
                 <a href="dashboard.html" class="nav-item">Dashboard</a>
                 <a href="donate.html" class="btn btn-primary btn-sm nav-mobile-cta">Support Us</a>
+                <!-- Mobile Only RTL Button -->
+                <button class="mobile-only-rtl" onclick="document.getElementById('rtl-toggle').click()">RTL</button>
             </div>
 
             <div class="nav-utils">
@@ -58,7 +60,7 @@
     <!-- Reading Progress -->
     <div id="reading-progress" class="reading-progress"></div>
 
-    <main>
+    <main class="home-page">
         <!-- Hero Section -->
         <section class="hero-3d section">
             <div class="container grid-2">
@@ -96,7 +98,7 @@
                 
                 <div class="grid-3">
                     <!-- Article 1 -->
-                    <div class="card reveal">
+                    <div class="card reveal affected-card">
                         <div class="card-img-wrapper">
                             <span class="tag-floating">Health</span>
                             <img src="https://images.unsplash.com/photo-1584483766114-2cea6facdf57?auto=format&fit=crop&w=600&q=80" alt="Healthcare" class="card-img">
@@ -108,7 +110,7 @@
                     </div>
                     
                     <!-- Article 2 -->
-                    <div class="card reveal">
+                    <div class="card reveal affected-card">
                         <div class="card-img-wrapper">
                             <span class="tag-floating">Tech</span>
                             <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=600&q=80" alt="Tech" class="card-img">
@@ -217,8 +219,8 @@
                 <!-- Column 1: Branding & Social -->
                 <div class="footer-brand">
                     <a href="index.html" class="logo mb-sm">
-                        <img src="assets/images/logo.png" alt="Logo">
-                        <span class="brand-name"><span class="brand-accent">The</span> Collective<span class="brand-accent">.</span></span>
+                        <img src="assets/images/logo.png" alt="Collective Logo">
+                        <span class="brand-name">The <span class="brand-accent">Collective.</span></span>
                     </a>
                     <p class="footer-mission mb-md">
                         Holding power accountable through rigorous, data-driven journalism. 
