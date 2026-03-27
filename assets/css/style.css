@@ -681,22 +681,43 @@ main {
     font-size: 0.95rem;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .newsletter-form {
-        flex-direction: column;
-        background: transparent;
-        box-shadow: none;
-        border: none;
-        padding: 0;
-        gap: 1rem;
+        flex-direction: row !important;
+        background: var(--bg-primary) !important;
+        border-radius: 50px !important;
+        padding: 4px !important;
+        border: 1px solid var(--border-color) !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+        gap: 0 !important;
+        display: flex !important;
     }
 
-    .newsletter-form .form-control,
-    .newsletter-form .btn {
-        border-radius: 50px;
-        width: 100%;
-        border: 1px solid var(--border-color) !important;
-        background: var(--bg-primary) !important;
+    .newsletter-form .form-control {
+        border-radius: 50px !important;
+        flex: 1 1 65% !important;
+        border: none !important;
+        background: transparent !important;
+        padding: 0 0.5rem 0 1.25rem !important;
+        height: 46px !important;
+        box-shadow: none !important;
+        min-width: 0 !important;
+    }
+
+    .newsletter-form .btn,
+    .newsletter-form button[type="submit"] {
+        border-radius: 50px !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+        max-width: none !important;
+        padding: 0 1.25rem !important;
+        white-space: nowrap !important;
+        font-size: 0.9rem !important;
+        margin: 0 !important;
+        height: 46px !important;
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
 }
 
@@ -1147,6 +1168,43 @@ main {
     text-align: right;
 }
 
+/* Ensure mobile menu items stack vertically in RTL */
+@media (max-width: 1024px) {
+    [dir="rtl"] .nav-links {
+        flex-direction: column !important;
+        align-items: center !important;
+        direction: rtl !important;
+        /* Apply RTL only to menu content */
+    }
+
+    /* Enforce stable layout for tablet RTL */
+    [dir="rtl"] .nav-content {
+        display: flex !important;
+        flex-direction: row !important;
+        /* Keep logo left, buttons right */
+        justify-content: space-between !important;
+    }
+
+    [dir="rtl"] .logo {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        order: 1 !important;
+    }
+
+    [dir="rtl"] .nav-utils {
+        display: flex !important;
+        margin-left: auto !important;
+        margin-right: 0.5rem !important;
+        order: 2 !important;
+    }
+
+    [dir="rtl"] .nav-toggle {
+        order: 3 !important;
+        margin-left: 0.5rem !important;
+        margin-right: 0 !important;
+    }
+}
+
 /* Section Specific Dark Overrides */
 [data-theme="dark"] .newsletter-cta {
     background-color: #000000 !important;
@@ -1470,10 +1528,14 @@ main {
     left: 0;
     text-align: right;
 }
+
 /* -- Mobile-Only Full Responsive Package (Senior Design) -- */
-.mobile-only-rtl { display: none; }
+.mobile-only-rtl {
+    display: none;
+}
 
 @media (max-width: 767px) {
+
     /* Navbar: Centered vertical, Logo+Name | Theme | Hamburger */
     .nav-content {
         display: flex !important;
@@ -1489,7 +1551,7 @@ main {
         gap: 12px !important;
         order: 1 !important;
     }
-    
+
     .nav-utils {
         display: flex !important;
         align-items: center !important;
@@ -1529,11 +1591,26 @@ main {
         gap: 2.5rem !important;
     }
 
-    .footer-brand, .footer-links, .footer-newsletter {
+    .footer-brand,
+    .footer-links,
+    .footer-newsletter {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         margin-bottom: 0 !important;
+    }
+
+    .footer-brand .logo {
+        order: -1 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .footer-brand .footer-mission {
+        order: 0 !important;
+    }
+
+    .footer-brand .social-links {
+        order: 1 !important;
     }
 
     .social-links {
@@ -1557,7 +1634,8 @@ main {
         padding: 0 1.25rem !important;
     }
 
-    .grid-2, .grid-3 {
+    .grid-2,
+    .grid-3 {
         grid-template-columns: 1fr !important;
         gap: 2rem !important;
     }
@@ -1565,6 +1643,7 @@ main {
 
 /* -- Mobile-Only Subscribe Button Size Refinement (Further Reduction) -- */
 @media (max-width: 767px) {
+
     .newsletter-form button,
     .newsletter-inline button,
     .btn-primary[type="submit"] {
@@ -1578,8 +1657,11 @@ main {
 
 /* -- Tablet View Card Alignment Refinement (768px - 1024px) -- */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .grid-3, .grid-2 {
-        grid-template-columns: 1fr !important; /* Stack for perfect centering if space is tight */
+
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr !important;
+        /* Stack for perfect centering if space is tight */
         max-width: 600px !important;
         margin: 0 auto !important;
     }
@@ -1615,5 +1697,62 @@ main {
     .investigative-content {
         max-width: 700px !important;
         margin: 0 auto !important;
+    }
+}
+
+
+/* Fix subscription section for mobile view */
+@media (max-width: 768px) {
+
+    .subscribe-container {
+        display: flex;
+        flex-direction: row;
+        /* keep same as tablet */
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .subscribe-container input {
+        flex: 1;
+        width: 65%;
+        padding: 12px 15px;
+        border-radius: 30px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+    .subscribe-container button {
+        width: 35%;
+        padding: 12px;
+        border-radius: 30px;
+        background-color: #e50914;
+        /* red button */
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+}
+
+/* Fix Hero section alignment in Mobile & Tablet (Home 1) */
+@media (max-width: 1024px) {
+    .home-page .hero-text {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-page .hero-actions {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 1rem;
     }
 }

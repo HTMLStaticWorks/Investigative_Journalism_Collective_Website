@@ -28,7 +28,7 @@
                 <a href="dashboard.html" class="nav-item">Dashboard</a>
                 <a href="login.html" class="btn btn-sm btn-outline">Login</a>
                 <a href="signup.html" class="btn btn-sm btn-primary">Signup</a>
-
+                <button class="mobile-only-rtl" onclick="document.getElementById('rtl-toggle').click()">RTL</button>
             </div>
 
             <div class="nav-utils">
@@ -263,17 +263,18 @@
         .submit-btn { width: 100%; padding: 1rem; border-radius: 12px; font-weight: 700; letter-spacing: 0.5px; margin-top: 1rem; }
 
         /* ── Contact Info Sidebar ── */
-        .contact-list { list-style: none; padding: 0; }
-        .contact-list li { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 2rem; }
+        .contact-info-section { text-align: center; }
+        .contact-list { list-style: none; padding: 0; display: inline-flex; flex-direction: column; align-items: flex-start; }
+        .contact-list li { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 2rem; text-align: left; }
         .icon-circle { width: 48px; height: 48px; min-width: 48px; border-radius: 50%; background: var(--bg-secondary); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.1rem; }
         .contact-list .label { display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1px; letter-spacing: 0.5px; }
         .contact-list .value { color: var(--text-primary); font-weight: 600; font-size: 1.05rem; }
 
-        .secure-alt-card { border-radius: 20px; background: var(--bg-secondary); border: none; }
+        .secure-alt-card { border-radius: 20px; background: var(--bg-secondary); border: none; text-align: center; }
         .secure-alt-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
         .messenger-icon { font-size: 1.2rem; color: #2086ff; margin-right: 0.5rem; }
-        .option-header { display: flex; align-items: center; margin-bottom: 0.75rem; }
-        .option-value { display: flex; align-items: center; justify-content: space-between; background: var(--bg-primary); padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid var(--border-color); }
+        .option-header { display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem; }
+        .option-value { display: flex; align-items: center; justify-content: space-between; background: var(--bg-primary); padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid var(--border-color); max-width: 300px; margin: 0 auto; }
         .option-value code { font-family: 'Inter', monospace; color: var(--text-primary); font-size: 0.95rem; font-weight: 600; }
         .copy-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; transition: color 0.2s; }
         .copy-btn:hover { color: var(--primary-color); }

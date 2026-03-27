@@ -105,7 +105,7 @@
             <div class="mt-xl text-center reveal">
                 <h3>View Our Official Reports</h3>
                 <p>Download our audited financial statements and annual impact reports.</p>
-                <div class="flex-center mt-md" style="display: flex; justify-content: center; gap: 1rem;">
+                <div class="flex-center mt-md reports-btns" style="display: flex; justify-content: center; gap: 1rem;">
                     <a href="#" class="btn btn-outline btn-sm"><i class="fas fa-file-pdf"></i> 2025 Annual Report</a>
                     <a href="#" class="btn btn-outline btn-sm"><i class="fas fa-file-pdf"></i> IRS Form 990</a>
                 </div>
@@ -187,6 +187,10 @@
         .check-list li { margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.75rem; font-weight: 500; }
         .underline { text-decoration: underline; text-decoration-color: var(--primary-color); }
         .active { color: var(--primary-color) !important; font-weight: 700; }
+
+        @media (max-width: 768px) {
+            .reports-btns { flex-direction: column; align-items: center; }
+        }
     </style>
 </body>
 </html>

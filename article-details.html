@@ -28,7 +28,7 @@
                 <a href="dashboard.html" class="nav-item">Dashboard</a>
                 <a href="login.html" class="btn btn-sm btn-outline">Login</a>
                 <a href="signup.html" class="btn btn-sm btn-primary">Signup</a>
-
+                <button class="mobile-only-rtl" onclick="document.getElementById('rtl-toggle').click()">RTL</button>
             </div>
 
             <div class="nav-utils">
@@ -72,7 +72,7 @@
         <section class="section narrative-section">
             <div class="container grid-article">
                 <div class="narrative-body reveal">
-                    <p class="dropcap">I</p>t began with a single encrypted email in early 2025. What followed was a 14-month investigative journey through tax havens, shell companies, and high-security data silos. Our findings reveal a sophisticated network designed to circumvent international sanctions and facilitate the movement of billions in illicit capital.</p>
+                    <p><span class="dropcap">I</span>t began with a single encrypted email in early 2025. What followed was a 14-month investigative journey through tax havens, shell companies, and high-security data silos. Our findings reveal a sophisticated network designed to circumvent international sanctions and facilitate the movement of billions in illicit capital.</p>
                     
                     <h2 class="mt-lg font-serif">The Architecture of Secrecy</h2>
                     <p>Hidden behind layers of anonymity, these networks operate with impunity. We tracked the flow of capital from major state-owned enterprises into a maze of holding companies registered in the British Virgin Islands and Panama. This wasn't merely a series of isolated incidents, but a coordinated effort to dismantle financial transparency across borders.</p>
@@ -222,6 +222,10 @@
             .narrative-sidebar { border-left: none; padding-left: 0; padding-top: 3rem; border-top: 1px solid var(--border-color); }
             .pipeline-container { flex-direction: column; gap: 3rem; align-items: center; }
             .pipeline-arrow { transform: rotate(90deg); padding-bottom: 0; }
+        }
+        @media (max-width: 768px) {
+            .narrative-body p, .narrative-body h2 { text-align: center; }
+            .dropcap { float: none; display: inline-block; margin: 0 0.1em 0 0; vertical-align: text-top; }
         }
     </style>
 

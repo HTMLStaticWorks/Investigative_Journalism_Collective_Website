@@ -28,7 +28,7 @@
                 <a href="dashboard.html" class="nav-item">Dashboard</a>
                 <a href="login.html" class="btn btn-sm btn-outline">Login</a>
                 <a href="signup.html" class="btn btn-sm btn-primary">Signup</a>
-
+                <button class="mobile-only-rtl" onclick="document.getElementById('rtl-toggle').click()">RTL</button>
             </div>
 
             <div class="nav-utils">
@@ -55,7 +55,7 @@
         </header>
 
         <section class="section">
-            <div class="container grid-2 align-center">
+            <div class="container grid-2 align-center text-center">
                 <div class="reveal">
                     <h2>Holding Power <span class="text-accent">Accountable.</span></h2>
                     <p>Since our founding in 2018, we have published over 500 deep-dive investigations that have led to legislative changes, corporate restructuring, and international sanctions.</p>
@@ -71,8 +71,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="reveal">
-                    <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Team at work" class="card" style="border-radius: 20px;">
+                <div class="reveal" style="display: flex; justify-content: center;">
+                    <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Team at work" class="card" style="border-radius: 20px; display: block; margin: 0 auto;">
                 </div>
             </div>
         </section>
@@ -187,9 +187,17 @@
                 [data-theme="dark"] .about-values-section h3 {
                     color: #ffffff !important;
                 }
-                [data-theme="dark"] .about-values-section p,
                 [data-theme="dark"] .about-values-section .tag {
                     color: rgba(255,255,255,0.6) !important;
+                }
+
+                @media (min-width: 768px) and (max-width: 1024px) {
+                    .values-grid {
+                        grid-template-columns: repeat(3, 1fr) !important;
+                    }
+                    .value-pillar:last-child {
+                        grid-column: 2;
+                    }
                 }
             </style>
         </section>
@@ -265,6 +273,7 @@
         .align-center { align-items: center; }
         .uppercase { text-transform: uppercase; }
         .active { color: var(--primary-color) !important; font-weight: 700; }
+        #scroll-top i { color: #ffffff !important; }
     </style>
 </body>
 </html>

@@ -110,6 +110,11 @@
         .topbar-right { display: flex; align-items: center; gap: 1rem; }
         .avatar { width: 42px; height: 42px; background: #e63946; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 1rem; }
 
+        .greeting-container {
+            position: absolute; left: 50%; transform: translateX(-50%);
+            text-align: center; width: 100%; pointer-events: none;
+        }
+
         /* ── Tab Panels ── */
         .tab-panel { display: none; }
         .tab-panel.active { display: block; }
@@ -205,6 +210,17 @@
             .settings-row { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
             .settings-row input, .settings-row select { width: 100% !important; }
             .sidebar-toggle-btn { display: flex !important; }
+            .greeting-container { position: static; transform: none; flex: 1; padding: 0 10px; }
+            .sidebar .mobile-only-rtl { 
+                display: block !important; 
+                background: var(--bg-secondary);
+                border: 1px solid var(--border-color);
+                border-radius: 10px;
+                padding: 0.7rem;
+                color: var(--text-primary);
+                font-weight: 600;
+                cursor: pointer;
+            }
         }
 
         .sidebar-toggle-btn {
@@ -257,8 +273,13 @@
 
             <li class="sb-section-label">Account</li>
             <li><a href="#" class="nav-link" data-tab="settings">
-                <i class="fas fa-cog"></i> Settings
+                <i class="fas fa-cog"></i> Account Settings
             </a></li>
+            
+            <!-- Mobile Only RTL Button -->
+            <li class="mobile-only-item" style="margin-top: 1rem; padding: 0 0.75rem;">
+                <button class="mobile-only-rtl rtl-toggle" style="width: 100%; display: none;">RTL</button>
+            </li>
         </ul>
 
         <!-- Profile in Sidebar (Restored per user request) -->
@@ -293,8 +314,8 @@
             </button>
 
             <!-- Center: Personalized Greeting -->
-            <div style="position: absolute; left: 50%; transform: translateX(-50%); text-align: center; width: 100%; pointer-events: none;">
-                <h1 style="margin: 0; font-size: clamp(1.2rem, 3vw, 1.8rem); pointer-events: auto;">Welcome back, <span style="color: var(--primary-color);">Reader</span>.</h1>
+            <div class="greeting-container">
+                <h1 style="margin: 0; font-size: clamp(1.15rem, 5vw, 1.6rem); pointer-events: auto;">Welcome back, <span style="color: var(--primary-color);">Reader</span>.</h1>
             </div>
 
             <!-- Right: Empty or spacing -->
