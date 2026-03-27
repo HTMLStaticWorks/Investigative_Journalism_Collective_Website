@@ -335,16 +335,17 @@ main {
 @media (min-width: 1025px) {
     .nav-content {
         display: grid;
-        grid-template-columns: 1fr auto 1fr;
+        grid-template-columns: auto 1fr auto;
         align-items: center;
     }
 
     .nav-links {
         grid-column: 2;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         margin-left: 0 !important;
+        margin-right: 2rem !important;
         gap: 1.5rem !important;
     }
 
