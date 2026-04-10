@@ -1,192 +1,675 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | The Collective</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        *, *::before, *::after { box-sizing: border-box; }
-        body { background: var(--bg-tertiary); display: flex; min-height: 100vh; margin: 0; font-family: 'Inter', sans-serif; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-tertiary);
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
 
         /* ── Sidebar ── */
         .sidebar {
-            width: 260px; min-width: 260px;
+            width: 260px;
+            min-width: 260px;
             background: #ffffff;
             border-right: 1px solid var(--border-color);
-            display: flex; flex-direction: column;
+            display: flex;
+            flex-direction: column;
             padding: 0 1.25rem 2rem;
-            position: sticky; top: 0; height: 100vh; overflow-y: auto;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
         }
-        .sb-logo img { width: 32px; height: 32px; object-fit: contain; }
+
+        .sb-logo img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
 
         .sb-section-label {
-            font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 1.5px; color: #aaa;
-            padding: 0 0.75rem; margin: 1.25rem 0 0.5rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #aaa;
+            padding: 0 0.75rem;
+            margin: 1.25rem 0 0.5rem;
         }
 
-        .sb-nav { list-style: none; padding: 0; margin: 0; flex-grow: 1; }
-        .sb-nav li { margin-bottom: 2px; }
+        .sb-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .sb-nav li {
+            margin-bottom: 2px;
+        }
+
         .sb-nav a {
-            display: flex; align-items: center; gap: 0.85rem;
-            color: #555; font-size: 0.875rem; font-weight: 500;
-            padding: 0.7rem 0.85rem; border-radius: 10px;
-            text-decoration: none; transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            color: #555;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.7rem 0.85rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.2s ease;
             cursor: pointer;
         }
-        .sb-nav a:hover { color: #111; background: #f3f4f6; }
-        .sb-nav a.active { color: #e63946; background: rgba(230,57,70,0.08); font-weight: 700; }
-        .sb-nav a.active i { color: #e63946; }
-        .sb-nav a i { font-size: 0.9rem; width: 18px; text-align: center; color: #bbb; transition: color 0.2s; }
-        .sb-nav a:hover i { color: #555; }
+
+        .sb-nav a:hover {
+            color: #111;
+            background: #f3f4f6;
+        }
+
+        .sb-nav a.active {
+            color: #e63946;
+            background: rgba(230, 57, 70, 0.08);
+            font-weight: 700;
+        }
+
+        .sb-nav a.active i {
+            color: #e63946;
+        }
+
+        .sb-nav a i {
+            font-size: 0.9rem;
+            width: 18px;
+            text-align: center;
+            color: #bbb;
+            transition: color 0.2s;
+        }
+
+        .sb-nav a:hover i {
+            color: #555;
+        }
 
         /* Sidebar Profile */
         .sb-profile {
-            display: flex; align-items: center; gap: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
             padding: 0.85rem 0.75rem;
             margin-bottom: 0.5rem;
             border-top: 1px solid #f0f0f0;
             padding-top: 1.25rem;
             margin-top: auto;
         }
-        .sb-avatar {
-            width: 38px; height: 38px; min-width: 38px;
-            background: #e63946; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: #fff; font-weight: 700; font-size: 0.95rem;
-        }
-        .sb-user-name { font-size: 0.85rem; font-weight: 700; color: #111; }
-        .sb-user-plan { font-size: 0.72rem; color: #aaa; margin-top: 1px; }
 
-        [data-theme="dark"] .sb-profile { border-top-color: rgba(255,255,255,0.07) !important; }
-        [data-theme="dark"] .sb-user-name { color: #fff !important; }
-        [data-theme="dark"] .sb-user-plan { color: rgba(255,255,255,0.35) !important; }
+        .sb-avatar {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            background: #e63946;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .sb-user-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .sb-user-plan {
+            font-size: 0.72rem;
+            color: #aaa;
+            margin-top: 1px;
+        }
+
+        [data-theme="dark"] .sb-profile {
+            border-top-color: rgba(255, 255, 255, 0.07) !important;
+        }
+
+        [data-theme="dark"] .sb-user-name {
+            color: #fff !important;
+        }
+
+        [data-theme="dark"] .sb-user-plan {
+            color: rgba(255, 255, 255, 0.35) !important;
+        }
 
         .sb-logout {
-            margin-top: auto; padding-top: 1.5rem;
+            margin-top: auto;
+            padding-top: 1.5rem;
             border-top: 1px solid #f0f0f0;
         }
+
         .sb-logout a {
-            display: flex; align-items: center; gap: 0.85rem;
-            color: #888; font-size: 0.85rem;
-            text-decoration: none; padding: 0.6rem 0.85rem; border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            color: #888;
+            font-size: 0.85rem;
+            text-decoration: none;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
             transition: all 0.2s;
         }
-        .sb-logout a:hover { color: #e63946; background: rgba(230,57,70,0.06); }
+
+        .sb-logout a:hover {
+            color: #e63946;
+            background: rgba(230, 57, 70, 0.06);
+        }
 
         /* ── Dark Mode Sidebar ── */
         [data-theme="dark"] .sidebar {
             background: #111118 !important;
-            border-right-color: rgba(255,255,255,0.07) !important;
+            border-right-color: rgba(255, 255, 255, 0.07) !important;
         }
 
-        [data-theme="dark"] .sb-section-label { color: rgba(255,255,255,0.3) !important; }
-        [data-theme="dark"] .sb-nav a { color: rgba(255,255,255,0.5) !important; }
-        [data-theme="dark"] .sb-nav a i { color: rgba(255,255,255,0.25) !important; }
-        [data-theme="dark"] .sb-nav a:hover { color: #fff !important; background: rgba(255,255,255,0.07) !important; }
-        [data-theme="dark"] .sb-nav a:hover i { color: rgba(255,255,255,0.6) !important; }
-        [data-theme="dark"] .sb-nav a.active { color: #fff !important; background: rgba(230,57,70,0.2) !important; }
-        [data-theme="dark"] .sb-nav a.active i { color: #e63946 !important; }
-        [data-theme="dark"] .sb-logout { border-top-color: rgba(255,255,255,0.07) !important; }
-        [data-theme="dark"] .sb-logout a { color: rgba(255,255,255,0.35) !important; }
-        [data-theme="dark"] .sb-logout a:hover { color: #e63946 !important; background: rgba(230,57,70,0.08) !important; }
+        [data-theme="dark"] .sb-section-label {
+            color: rgba(255, 255, 255, 0.3) !important;
+        }
+
+        [data-theme="dark"] .sb-nav a {
+            color: rgba(255, 255, 255, 0.5) !important;
+        }
+
+        [data-theme="dark"] .sb-nav a i {
+            color: rgba(255, 255, 255, 0.25) !important;
+        }
+
+        [data-theme="dark"] .sb-nav a:hover {
+            color: #fff !important;
+            background: rgba(255, 255, 255, 0.07) !important;
+        }
+
+        [data-theme="dark"] .sb-nav a:hover i {
+            color: rgba(255, 255, 255, 0.6) !important;
+        }
+
+        [data-theme="dark"] .sb-nav a.active {
+            color: #fff !important;
+            background: rgba(230, 57, 70, 0.2) !important;
+        }
+
+        [data-theme="dark"] .sb-nav a.active i {
+            color: #e63946 !important;
+        }
+
+        [data-theme="dark"] .sb-logout {
+            border-top-color: rgba(255, 255, 255, 0.07) !important;
+        }
+
+        [data-theme="dark"] .sb-logout a {
+            color: rgba(255, 255, 255, 0.35) !important;
+        }
+
+        [data-theme="dark"] .sb-logout a:hover {
+            color: #e63946 !important;
+            background: rgba(230, 57, 70, 0.08) !important;
+        }
 
         /* ── Main ── */
-        .dash-main { flex-grow: 1; padding: 2.5rem 2.5rem 3rem; overflow-y: auto; margin-top: 80px; }
+        .dash-main {
+            flex-grow: 1;
+            padding: 0;
+            overflow-y: auto;
+            margin-top: 0;
+        }
+
+        .dash-content {
+            padding: 2.5rem 2.5rem 3rem;
+        }
 
         .dash-topbar {
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 2rem;
+            height: 80px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .dash-topbar h1 { font-size: 1.8rem; font-weight: 700; color: var(--text-primary); }
-        .dash-topbar h1 span { color: #e63946; }
-        .dash-topbar p { font-size: 0.83rem; color: var(--text-muted); margin-top: 0.2rem; }
-        .topbar-right { display: flex; align-items: center; gap: 1rem; }
-        .avatar { width: 42px; height: 42px; background: #e63946; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 1rem; }
+
+        .dash-topbar h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .dash-topbar h1 span {
+            color: var(--primary-color);
+        }
+
+        .topbar-left,
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            min-width: 45px;
+        }
+
+        .topbar-right {
+            justify-content: flex-end;
+            gap: 0.85rem;
+        }
+
+        .topbar-right .btn-rtl,
+        .topbar-right .btn-icon {
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 38px;
+            min-width: 38px;
+        }
+
+        .topbar-right .btn-rtl {
+            padding: 0 0.75rem;
+            min-width: 50px;
+        }
+
+        .topbar-right .btn-rtl:hover,
+        .topbar-right .btn-icon:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: rgba(var(--primary-h), 80%, 47%, 0.05);
+        }
+
+        .topbar-profile {
+            width: 38px;
+            height: 38px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .topbar-profile:hover {
+            transform: scale(1.05);
+        }
 
         .greeting-container {
-            position: absolute; left: 50%; transform: translateX(-50%);
-            text-align: center; width: 100%; pointer-events: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            pointer-events: none;
+            width: auto;
+        }
+
+        .greeting-container h1 {
+            pointer-events: auto;
         }
 
         /* ── Tab Panels ── */
-        .tab-panel { display: none; }
-        .tab-panel.active { display: block; }
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
 
         /* Stat cards */
-        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2rem; }
-        .stat-card { background: var(--bg-primary); border-radius: 14px; padding: 1.5rem; border: 1px solid var(--border-color); text-align: center; }
-        .stat-card .label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 0.5rem; }
-        .stat-card .value { font-size: 1.6rem; font-weight: 800; color: #e63946; }
-        .stat-card .note { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.25rem; }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-primary);
+            border-radius: 14px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .stat-card .label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .value {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #e63946;
+        }
+
+        .stat-card .note {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
 
         /* Section cards */
-        .dash-section { background: var(--bg-primary); border-radius: 14px; border: 1px solid var(--border-color); overflow: hidden; margin-bottom: 1.5rem; }
-        .dash-section-head { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
-        .dash-section-head h3 { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+        .dash-section {
+            background: var(--bg-primary);
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .dash-section-head {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dash-section-head h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
 
         /* Table */
-        .dash-table { width: 100%; border-collapse: collapse; }
-        .dash-table th { padding: 0.85rem 1.25rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-muted); background: var(--bg-secondary); text-align: left; }
-        .dash-table td { padding: 1rem 1.25rem; font-size: 0.88rem; color: var(--text-primary); border-top: 1px solid var(--border-color); }
-        .dash-table tr:hover td { background: var(--bg-secondary); }
-        .badge-success { background: #d1fae5; color: #065f46; font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 20px; }
-        .badge-pending { background: #fef9c3; color: #713f12; font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 20px; }
+        .dash-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .dash-table th {
+            padding: 0.85rem 1.25rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            background: var(--bg-secondary);
+            text-align: left;
+        }
+
+        .dash-table td {
+            padding: 1rem 1.25rem;
+            font-size: 0.88rem;
+            color: var(--text-primary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .dash-table tr:hover td {
+            background: var(--bg-secondary);
+        }
+
+        .badge-success {
+            background: #d1fae5;
+            color: #065f46;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+
+        .badge-pending {
+            background: #fef9c3;
+            color: #713f12;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
 
         /* Article saved card */
-        .saved-item { display: flex; align-items: flex-start; gap: 1.25rem; padding: 1.25rem 1.5rem; border-top: 1px solid var(--border-color); }
-        .saved-item:first-child { border-top: none; }
-        .saved-thumb { width: 70px; height: 70px; min-width: 70px; border-radius: 10px; background: var(--bg-secondary); overflow: hidden; }
-        .saved-thumb img { width: 100%; height: 100%; object-fit: cover; }
-        .saved-info .tag-xs { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: #e63946; letter-spacing: 0.8px; margin-bottom: 0.3rem; }
-        .saved-info h4 { font-size: 0.9rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.2rem; }
-        .saved-info p { font-size: 0.78rem; color: var(--text-muted); }
-        .saved-actions { margin-left: auto; display: flex; gap: 0.5rem; align-items: center; }
-        .btn-xs { padding: 0.35rem 0.85rem; font-size: 0.75rem; font-weight: 600; border-radius: 7px; border: none; cursor: pointer; transition: all 0.2s; }
-        .btn-xs.primary { background: #e63946; color: #fff; }
-        .btn-xs.primary:hover { background: #c1121f; }
-        .btn-xs.ghost { background: var(--bg-secondary); color: var(--text-muted); border: 1px solid var(--border-color); }
-        .btn-xs.ghost:hover { border-color: #e63946; color: #e63946; }
+        .saved-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            padding: 1.25rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .saved-item:first-child {
+            border-top: none;
+        }
+
+        .saved-thumb {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            border-radius: 10px;
+            background: var(--bg-secondary);
+            overflow: hidden;
+        }
+
+        .saved-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .saved-info .tag-xs {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #e63946;
+            letter-spacing: 0.8px;
+            margin-bottom: 0.3rem;
+        }
+
+        .saved-info h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .saved-info p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .saved-actions {
+            margin-left: auto;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .btn-xs {
+            padding: 0.35rem 0.85rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 7px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-xs.primary {
+            background: #e63946;
+            color: #fff;
+        }
+
+        .btn-xs.primary:hover {
+            background: #c1121f;
+        }
+
+        .btn-xs.ghost {
+            background: var(--bg-secondary);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-xs.ghost:hover {
+            border-color: #e63946;
+            color: #e63946;
+        }
 
         /* Settings */
-        .settings-group { padding: 1.5rem; border-top: 1px solid var(--border-color); }
-        .settings-group:first-child { border-top: none; }
-        .settings-row { display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 0; border-bottom: 1px solid var(--border-color); }
-        .settings-row:last-child { border-bottom: none; }
-        .settings-row label { font-size: 0.85rem; font-weight: 600; color: var(--text-primary); }
-        .settings-row p { font-size: 0.78rem; color: var(--text-muted); }
-        .settings-row input, .settings-row select {
-            border: 1.5px solid var(--border-color); border-radius: 8px;
-            padding: 0.45rem 0.85rem; font-size: 0.85rem;
-            background: var(--bg-secondary); color: var(--text-primary);
+        .settings-group {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .settings-group:first-child {
+            border-top: none;
+        }
+
+        .settings-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .settings-row:last-child {
+            border-bottom: none;
+        }
+
+        .settings-row label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .settings-row p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .settings-row input,
+        .settings-row select {
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.45rem 0.85rem;
+            font-size: 0.85rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
             outline: none;
         }
-        .settings-row input:focus, .settings-row select:focus { border-color: #e63946; }
-        .toggle-switch { position: relative; width: 44px; height: 24px; }
-        .toggle-switch input { opacity: 0; width: 0; height: 0; }
-        .toggle-slider { position: absolute; inset: 0; background: var(--border-color); border-radius: 24px; cursor: pointer; transition: 0.3s; }
-        .toggle-slider::before { content: ''; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px; background: white; border-radius: 50%; transition: 0.3s; }
-        .toggle-switch input:checked + .toggle-slider { background: #e63946; }
-        .toggle-switch input:checked + .toggle-slider::before { transform: translateX(20px); }
+
+        .settings-row input:focus,
+        .settings-row select:focus {
+            border-color: #e63946;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 44px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            inset: 0;
+            background: var(--border-color);
+            border-radius: 24px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .toggle-slider::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            left: 3px;
+            top: 3px;
+            background: white;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .toggle-switch input:checked+.toggle-slider {
+            background: #e63946;
+        }
+
+        .toggle-switch input:checked+.toggle-slider::before {
+            transform: translateX(20px);
+        }
 
         /* Billing card */
-        .billing-card { padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-        .billing-plan h4 { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
-        .billing-plan p { font-size: 0.8rem; color: var(--text-muted); }
-        .billing-price { font-size: 2rem; font-weight: 800; color: #e63946; }
-        .billing-price span { font-size: 0.85rem; font-weight: 400; color: var(--text-muted); }
+        .billing-card {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .billing-plan h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .billing-plan p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .billing-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #e63946;
+        }
+
+        .billing-price span {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
 
         .sidebar-overlay {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1005;
             backdrop-filter: blur(2px);
         }
@@ -199,20 +682,72 @@
                 height: 100vh;
                 z-index: 1010;
                 transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                box-shadow: 20px 0 50px rgba(0,0,0,0.15);
+                box-shadow: 20px 0 50px rgba(0, 0, 0, 0.15);
             }
-            .sidebar.active { transform: translateX(280px); }
-            .sidebar-overlay.active { display: block; }
-            .dash-main { padding: 1.5rem; width: 100%; }
-            .dash-topbar { flex-direction: row !important; align-items: center !important; justify-content: space-between !important; padding: 1rem 1.5rem !important; min-height: 70px !important; }
-            .stat-grid { grid-template-columns: 1fr; }
-            .dash-table-wrap { overflow-x: auto; width: 100%; }
-            .settings-row { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-            .settings-row input, .settings-row select { width: 100% !important; }
-            .sidebar-toggle-btn { display: flex !important; }
-            .greeting-container { position: static; transform: none; flex: 1; padding: 0 10px; }
-            .sidebar .mobile-only-rtl { 
-                display: block !important; 
+
+            .sidebar.active {
+                transform: translateX(280px);
+            }
+
+            .sidebar-overlay.active {
+                display: block;
+            }
+
+            .dash-main {
+                padding: 0;
+                width: 100%;
+            }
+
+            .dash-topbar {
+                padding: 0 1rem !important;
+            }
+
+            .dash-content {
+                padding: 1.5rem;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dash-table-wrap {
+                overflow-x: auto;
+                width: 100%;
+            }
+
+            .settings-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+
+            .settings-row input,
+            .settings-row select {
+                width: 100% !important;
+            }
+
+            .sidebar-toggle-btn {
+                display: flex !important;
+            }
+
+            #rtl-toggle {
+                display: flex !important;
+            }
+
+            .greeting-container {
+                position: static;
+                transform: none;
+                flex: 1;
+                padding: 0 10px;
+                text-align: left;
+            }
+
+            .dash-topbar h1 {
+                font-size: 1.25rem;
+            }
+
+            .sidebar .mobile-only-rtl {
+                display: block !important;
                 background: var(--bg-secondary);
                 border: 1px solid var(--border-color);
                 border-radius: 10px;
@@ -220,6 +755,88 @@
                 color: var(--text-primary);
                 font-weight: 600;
                 cursor: pointer;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dash-content {
+                padding: 1rem;
+            }
+
+            .dash-topbar {
+                padding: 0.5rem 0.75rem !important;
+                height: auto;
+                min-height: 70px;
+            }
+
+            .dash-topbar h1 {
+                font-size: 1.1rem;
+                line-height: 1.3;
+            }
+
+            #rtl-toggle {
+                display: flex !important;
+            }
+
+            @media (max-width: 360px) {
+                .dash-topbar h1 {
+                    font-size: 0.95rem;
+                }
+                .topbar-right {
+                    gap: 0.35rem;
+                }
+            }
+
+            .stat-card {
+                padding: 1.25rem;
+            }
+
+            .saved-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .saved-actions {
+                margin-left: 0;
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .billing-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+
+            .billing-price {
+                font-size: 1.75rem;
+            }
+
+            .topbar-right {
+                gap: 0.5rem;
+            }
+
+            .topbar-right .btn-rtl,
+            .topbar-right .btn-icon,
+            .topbar-profile {
+                width: 34px;
+                height: 34px;
+                min-width: 34px;
+                font-size: 0.75rem;
+            }
+            
+            .topbar-right .btn-rtl {
+                min-width: 42px;
+                padding: 0 0.5rem;
+            }
+
+            .dash-section-head {
+                padding: 1rem;
+            }
+
+            .dash-section-head h3 {
+                font-size: 0.95rem;
             }
         }
 
@@ -238,334 +855,436 @@
         }
     </style>
 </head>
+
 <body style="display: flex; flex-direction: column;">
     <!-- Navbar removed per dashboard simplification request -->
 
 
     <div style="display: flex; flex: 1;">
-    <!-- ── Dashboard Sidebar Overlay ── -->
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        <!-- ── Dashboard Sidebar Overlay ── -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
 
-    <!-- ── Sidebar ── -->
-    <aside class="sidebar" id="sidebar">
-        <a href="index.html" class="sb-logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none; padding: 1.5rem 0.75rem;">
-            <img src="assets/images/logo.png" alt="Collective Logo" style="width: 28px; height: 28px;">
-            <span class="brand-name" style="font-size: 1.2rem;">The <span class="brand-accent">Collective.</span></span>
-        </a>
+        <!-- ── Sidebar ── -->
+        <aside class="sidebar" id="sidebar">
+            <a href="index.html" class="sb-logo"
+                style="display: flex; align-items: center; gap: 10px; text-decoration: none; padding: 1.5rem 0.75rem;">
+                <img src="assets/images/logo.png" alt="Collective Logo" style="width: 28px; height: 28px;">
+                <span class="brand-name" style="font-size: 1.2rem;">The <span
+                        class="brand-accent">Collective.</span></span>
+            </a>
 
-        <ul class="sb-nav">
-            <li class="sb-section-label">Main</li>
-            <li><a href="#" class="nav-link active" data-tab="overview">
-                <i class="fas fa-tachometer-alt"></i> Overview
-            </a></li>
-            <li><a href="#" class="nav-link" data-tab="saved">
-                <i class="fas fa-bookmark"></i> Saved Articles
-            </a></li>
+            <ul class="sb-nav">
+                <li class="sb-section-label">Main</li>
+                <li><a href="#" class="nav-link active" data-tab="overview">
+                        <i class="fas fa-tachometer-alt"></i> Overview
+                    </a></li>
+                <li><a href="#" class="nav-link" data-tab="saved">
+                        <i class="fas fa-bookmark"></i> Saved Articles
+                    </a></li>
 
-            <li class="sb-section-label">Finance</li>
-            <li><a href="#" class="nav-link" data-tab="donations">
-                <i class="fas fa-hand-holding-heart"></i> Donation History
-            </a></li>
-            <li><a href="#" class="nav-link" data-tab="billing">
-                <i class="fas fa-credit-card"></i> Billings
-            </a></li>
+                <li class="sb-section-label">Finance</li>
+                <li><a href="#" class="nav-link" data-tab="donations">
+                        <i class="fas fa-hand-holding-heart"></i> Donation History
+                    </a></li>
+                <li><a href="#" class="nav-link" data-tab="billing">
+                        <i class="fas fa-credit-card"></i> Billings
+                    </a></li>
 
-            <li class="sb-section-label">Account</li>
-            <li><a href="#" class="nav-link" data-tab="settings">
-                <i class="fas fa-cog"></i> Account Settings
-            </a></li>
-            
-            <!-- Mobile Only RTL Button -->
-            <li class="mobile-only-item" style="margin-top: 1rem; padding: 0 0.75rem;">
-                <button class="mobile-only-rtl rtl-toggle" style="width: 100%; display: none;">RTL</button>
-            </li>
-        </ul>
+                <li class="sb-section-label">Account</li>
+                <li><a href="#" class="nav-link" data-tab="settings">
+                        <i class="fas fa-cog"></i> Account Settings
+                    </a></li>
 
-        <!-- Profile in Sidebar (Restored per user request) -->
-        <div class="sb-profile" style="margin-top: auto; padding: 1.5rem; border-top: 1px solid var(--border-color); display: flex; align-items: center; gap: 1rem;">
-            <div class="sb-avatar" style="width: 40px; height: 40px; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold;">R</div>
-            <div class="sb-user-info">
-                <div class="sb-user-name" style="font-weight: 600; color: var(--text-primary);">Reader</div>
-                <div class="sb-user-plan" style="font-size: 0.75rem; color: var(--text-muted);">Insider Member</div>
-            </div>
-        </div>
+            </ul>
 
-        <!-- Sidebar Utilities (RTL & Light/Dark) -->
-        <div class="sb-utilities" style="padding: 1.25rem 0.75rem; border-top: 1px solid var(--border-color); display: flex; align-items: center; gap: 0.75rem; justify-content: space-between;">
-            <button id="rtl-toggle" class="btn-rtl" style="flex: 1; height: 36px; font-size: 0.75rem;">RTL</button>
-            <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme" style="width: 36px; height: 36px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px;">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-
-        <div class="sb-logout" style="padding: 1.25rem 0.75rem; border-top: 1px solid var(--border-color);">
-            <a href="index.html" style="color: var(--text-muted); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem;"><i class="fas fa-sign-out-alt"></i> Logout</a>
-        </div>
-    </aside>
-
-    <!-- ── Main Content ── -->
-    <main class="dash-main">
-        <!-- Top Bar - Simplified -->
-        <div class="dash-topbar" style="display: flex; align-items: center; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); position: relative; min-height: 80px;">
-            <!-- Left: Sidebar Toggle -->
-            <button id="sidebar-toggle" class="sidebar-toggle-btn" style="margin-right: auto;">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <!-- Center: Personalized Greeting -->
-            <div class="greeting-container">
-                <h1 style="margin: 0; font-size: clamp(1.15rem, 5vw, 1.6rem); pointer-events: auto;">Welcome back, <span style="color: var(--primary-color);">Reader</span>.</h1>
-            </div>
-
-            <!-- Right: Empty or spacing -->
-            <div style="width: 40px; margin-left: auto;"></div>
-        </div>
-
-        <!-- ── TAB: Overview ── -->
-        <div class="tab-panel active" id="tab-overview">
-            <div class="stat-grid">
-                <div class="stat-card">
-                    <div class="label">Subscription</div>
-                    <div class="value">Insider</div>
-                    <div class="note">Next billing: Apr 24, 2026</div>
-                </div>
-                <div class="stat-card">
-                    <div class="label">Total Donated</div>
-                    <div class="value">$300</div>
-                    <div class="note">Since joining in 2025</div>
-                </div>
-                <div class="stat-card">
-                    <div class="label">Reports Unlocked</div>
-                    <div class="value">12</div>
-                    <div class="note">Including 4 exclusive leaks</div>
+            <!-- Profile in Sidebar (Restored per user request) -->
+            <div class="sb-profile"
+                style="margin-top: auto; padding: 1.5rem; border-top: 1px solid var(--border-color); display: flex; align-items: center; gap: 1rem;">
+                <div class="sb-avatar"
+                    style="width: 40px; height: 40px; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold;">
+                    R</div>
+                <div class="sb-user-info">
+                    <div class="sb-user-name" style="font-weight: 600; color: var(--text-primary);">Reader</div>
+                    <div class="sb-user-plan" style="font-size: 0.75rem; color: var(--text-muted);">Insider Member</div>
                 </div>
             </div>
 
-            <div class="dash-section">
-                <div class="dash-section-head">
-                    <h3>Recommended for You</h3>
-                    <a href="articles.html" style="font-size:0.8rem; color:#e63946; text-decoration:none;">View All</a>
-                </div>
-                <div class="saved-item">
-                    <div class="saved-thumb">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=200&q=80" alt="">
-                    </div>
-                    <div class="saved-info">
-                        <div class="tag-xs">Technology</div>
-                        <h4>Project Eclipse: Part II</h4>
-                        <p>The second part of our deep-dive into the surveillance state — exclusive to Insider members.</p>
-                    </div>
-                    <div class="saved-actions">
-                        <a href="article-details.html" class="btn-xs primary">Read Now</a>
-                    </div>
-                </div>
+            <div class="sb-logout"
+                style="padding: 1.25rem 0.75rem; border-top: 1px solid var(--border-color); margin-top: auto;">
+                <a href="index.html"
+                    style="color: var(--text-muted); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem;"><i
+                        class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
-        </div>
+        </aside>
 
-        <!-- ── TAB: Saved Articles ── -->
-        <div class="tab-panel" id="tab-saved">
-            <div class="dash-section">
-                <div class="dash-section-head"><h3>Saved Articles</h3></div>
-                <div class="saved-item">
-                    <div class="saved-thumb"><img src="https://images.unsplash.com/photo-1534224039826-c7a0eda0e6b3?auto=format&fit=crop&w=200&q=80" alt=""></div>
-                    <div class="saved-info">
-                        <div class="tag-xs">Finance</div>
-                        <h4>The Lithium Labyrinth</h4>
-                        <p>How a $4B battery supply chain is evading environmental regulation.</p>
-                    </div>
-                    <div class="saved-actions">
-                        <a href="article-details.html" class="btn-xs primary">Read</a>
-                        <button class="btn-xs ghost"><i class="fas fa-trash-alt"></i></button>
-                    </div>
+        <!-- ── Main Content ── -->
+        <main class="dash-main">
+            <!-- Top Bar - Simplified -->
+            <div class="dash-topbar">
+                <!-- Left: Sidebar Toggle -->
+                <div class="topbar-left">
+                    <button id="sidebar-toggle" class="sidebar-toggle-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
-                <div class="saved-item">
-                    <div class="saved-thumb"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=200&q=80" alt=""></div>
-                    <div class="saved-info">
-                        <div class="tag-xs">Politics</div>
-                        <h4>Shadow Governance</h4>
-                        <p>Tracing the back-channel influence networks inside three European parliaments.</p>
-                    </div>
-                    <div class="saved-actions">
-                        <a href="article-details.html" class="btn-xs primary">Read</a>
-                        <button class="btn-xs ghost"><i class="fas fa-trash-alt"></i></button>
-                    </div>
-                </div>
-                <div class="saved-item">
-                    <div class="saved-thumb"><img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=200&q=80" alt=""></div>
-                    <div class="saved-info">
-                        <div class="tag-xs">Environment</div>
-                        <h4>Carbon Credit Fraud</h4>
-                        <p>Swiss audit reveals 2,000+ falsified carbon credits across 14 nations.</p>
-                    </div>
-                    <div class="saved-actions">
-                        <a href="article-details.html" class="btn-xs primary">Read</a>
-                        <button class="btn-xs ghost"><i class="fas fa-trash-alt"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- ── TAB: Donation History ── -->
-        <div class="tab-panel" id="tab-donations">
-            <div class="stat-grid">
-                <div class="stat-card">
-                    <div class="label">Total Donated</div>
-                    <div class="value">$300</div>
-                    <div class="note">Across 12 transactions</div>
+                <!-- Center: Personalized Greeting -->
+                <div class="greeting-container">
+                    <h1>Welcome back, <span>Reader</span>.</h1>
                 </div>
-                <div class="stat-card">
-                    <div class="label">This Year</div>
-                    <div class="value">$175</div>
-                    <div class="note">Jan – Mar 2026</div>
-                </div>
-                <div class="stat-card">
-                    <div class="label">Impact Rank</div>
-                    <div class="value">Top 8%</div>
-                    <div class="note">Among all members</div>
-                </div>
-            </div>
-            <div class="dash-section">
-                <div class="dash-section-head"><h3>Donation History</h3></div>
-                <div class="dash-table-wrap">
-                <table class="dash-table">
-                    <thead>
-                        <tr><th>Date</th><th>Amount</th><th>Campaign</th><th>Status</th><th>Receipt</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Mar 24, 2026</td><td>$25.00</td><td>Insider Membership</td><td><span class="badge-success">Successful</span></td><td><a href="#" style="color:#e63946;font-size:0.8rem;"><i class="fas fa-download"></i> PDF</a></td></tr>
-                        <tr><td>Feb 24, 2026</td><td>$25.00</td><td>Insider Membership</td><td><span class="badge-success">Successful</span></td><td><a href="#" style="color:#e63946;font-size:0.8rem;"><i class="fas fa-download"></i> PDF</a></td></tr>
-                        <tr><td>Jan 24, 2026</td><td>$25.00</td><td>Insider Membership</td><td><span class="badge-success">Successful</span></td><td><a href="#" style="color:#e63946;font-size:0.8rem;"><i class="fas fa-download"></i> PDF</a></td></tr>
-                        <tr><td>Dec 15, 2025</td><td>$100.00</td><td>Year-End Campaign</td><td><span class="badge-success">Successful</span></td><td><a href="#" style="color:#e63946;font-size:0.8rem;"><i class="fas fa-download"></i> PDF</a></td></tr>
-                        <tr><td>Nov 5, 2025</td><td>$25.00</td><td>Insider Membership</td><td><span class="badge-pending">Pending</span></td><td><span style="color:var(--text-muted);font-size:0.8rem;">—</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
-            </div>
-        </div>
 
-        <!-- ── TAB: Billings ── -->
-        <div class="tab-panel" id="tab-billing">
-            <div class="dash-section">
-                <div class="dash-section-head"><h3>Current Plan</h3></div>
-                <div class="billing-card">
-                    <div class="billing-plan">
-                        <h4>Insider Membership</h4>
-                        <p>Renews automatically on April 24, 2026</p>
-                        <div style="margin-top:0.75rem; display:flex; gap:0.5rem;">
-                            <button class="btn-xs primary">Upgrade to Partner</button>
-                            <button class="btn-xs ghost">Cancel Plan</button>
+                <!-- Right: Utilities & Profile Icon -->
+                <div class="topbar-right">
+                    <button id="rtl-toggle" class="btn-rtl" title="Change Layout Direction">RTL</button>
+                    <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="topbar-profile" title="View Profile">R</div>
+                </div>
+            </div>
+
+            <div class="dash-content">
+                <!-- ── TAB: Overview ── -->
+                <div class="tab-panel active" id="tab-overview">
+                    <div class="stat-grid">
+                        <div class="stat-card">
+                            <div class="label">Subscription</div>
+                            <div class="value">Insider</div>
+                            <div class="note">Next billing: Apr 24, 2026</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="label">Total Donated</div>
+                            <div class="value">$300</div>
+                            <div class="note">Since joining in 2025</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="label">Reports Unlocked</div>
+                            <div class="value">12</div>
+                            <div class="note">Including 4 exclusive leaks</div>
                         </div>
                     </div>
-                    <div class="billing-price">$25<span>/mo</span></div>
-                </div>
-            </div>
 
-            <div class="dash-section">
-                <div class="dash-section-head"><h3>Payment Method</h3></div>
-                <div style="padding:1.5rem; display:flex; justify-content:space-between; align-items:center;">
-                    <div style="display:flex; align-items:center; gap:1rem;">
-                        <div style="width:52px; height:34px; background:#1a1f71; border-radius:6px; display:flex; align-items:center; justify-content:center;">
-                            <i class="fab fa-cc-visa" style="color:#fff; font-size:1.3rem;"></i>
+                    <div class="dash-section">
+                        <div class="dash-section-head">
+                            <h3>Recommended for You</h3>
+                            <a href="articles.html" style="font-size:0.8rem; color:#e63946; text-decoration:none;">View
+                                All</a>
                         </div>
-                        <div>
-                            <div style="font-size:0.9rem; font-weight:600; color:var(--text-primary);">Visa ending in 4242</div>
-                            <div style="font-size:0.78rem; color:var(--text-muted);">Expires 08/2027</div>
+                        <div class="saved-item">
+                            <div class="saved-thumb">
+                                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=200&q=80"
+                                    alt="">
+                            </div>
+                            <div class="saved-info">
+                                <div class="tag-xs">Technology</div>
+                                <h4>Project Eclipse: Part II</h4>
+                                <p>The second part of our deep-dive into the surveillance state — exclusive to Insider
+                                    members.</p>
+                            </div>
+                            <div class="saved-actions">
+                                <a href="article-details.html" class="btn-xs primary">Read Now</a>
+                            </div>
                         </div>
-                    </div>
-                    <button class="btn-xs ghost">Change Card</button>
-                </div>
-            </div>
-
-            <div class="dash-section">
-                <div class="dash-section-head"><h3>Billing History</h3></div>
-                <div class="dash-table-wrap">
-                <table class="dash-table">
-                    <thead>
-                        <tr><th>Date</th><th>Description</th><th>Amount</th><th>Status</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Mar 24, 2026</td><td>Insider — Monthly</td><td>$25.00</td><td><span class="badge-success">Paid</span></td></tr>
-                        <tr><td>Feb 24, 2026</td><td>Insider — Monthly</td><td>$25.00</td><td><span class="badge-success">Paid</span></td></tr>
-                        <tr><td>Jan 24, 2026</td><td>Insider — Monthly</td><td>$25.00</td><td><span class="badge-success">Paid</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
-            </div>
-        </div>
-
-        <!-- ── TAB: Settings ── -->
-        <div class="tab-panel" id="tab-settings">
-            <div class="dash-section">
-                <div class="dash-section-head"><h3>Profile</h3></div>
-                <div class="settings-group">
-                    <div class="settings-row">
-                        <div><label>Full Name</label></div>
-                        <input type="text" value="Reader Name" style="width:220px;">
-                    </div>
-                    <div class="settings-row">
-                        <div><label>Email Address</label></div>
-                        <input type="email" value="reader@example.com" style="width:220px;">
-                    </div>
-                    <div class="settings-row">
-                        <div><label>Password</label></div>
-                        <button class="btn-xs ghost">Change Password</button>
                     </div>
                 </div>
-            </div>
 
-            <div class="dash-section">
-                <div class="dash-section-head"><h3>Notifications</h3></div>
-                <div class="settings-group">
-                    <div class="settings-row">
-                        <div>
-                            <label>Weekly Briefing Email</label>
-                            <p>Receive a curated summary every Monday</p>
+                <!-- ── TAB: Saved Articles ── -->
+                <div class="tab-panel" id="tab-saved">
+                    <div class="dash-section">
+                        <div class="dash-section-head">
+                            <h3>Saved Articles</h3>
                         </div>
-                        <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
-                    </div>
-                    <div class="settings-row">
-                        <div>
-                            <label>Breaking Investigation Alerts</label>
-                            <p>Get notified when a major report is published</p>
+                        <div class="saved-item">
+                            <div class="saved-thumb"><img
+                                    src="https://images.unsplash.com/photo-1534224039826-c7a0eda0e6b3?auto=format&fit=crop&w=200&q=80"
+                                    alt=""></div>
+                            <div class="saved-info">
+                                <div class="tag-xs">Finance</div>
+                                <h4>The Lithium Labyrinth</h4>
+                                <p>How a $4B battery supply chain is evading environmental regulation.</p>
+                            </div>
+                            <div class="saved-actions">
+                                <a href="article-details.html" class="btn-xs primary">Read</a>
+                                <button class="btn-xs ghost"><i class="fas fa-trash-alt"></i></button>
+                            </div>
                         </div>
-                        <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
-                    </div>
-                    <div class="settings-row">
-                        <div>
-                            <label>Billing Reminders</label>
-                            <p>Email alerts before each billing cycle</p>
+                        <div class="saved-item">
+                            <div class="saved-thumb"><img
+                                    src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=200&q=80"
+                                    alt=""></div>
+                            <div class="saved-info">
+                                <div class="tag-xs">Politics</div>
+                                <h4>Shadow Governance</h4>
+                                <p>Tracing the back-channel influence networks inside three European parliaments.</p>
+                            </div>
+                            <div class="saved-actions">
+                                <a href="article-details.html" class="btn-xs primary">Read</a>
+                                <button class="btn-xs ghost"><i class="fas fa-trash-alt"></i></button>
+                            </div>
                         </div>
-                        <label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label>
+                        <div class="saved-item">
+                            <div class="saved-thumb"><img
+                                    src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=200&q=80"
+                                    alt=""></div>
+                            <div class="saved-info">
+                                <div class="tag-xs">Environment</div>
+                                <h4>Carbon Credit Fraud</h4>
+                                <p>Swiss audit reveals 2,000+ falsified carbon credits across 14 nations.</p>
+                            </div>
+                            <div class="saved-actions">
+                                <a href="article-details.html" class="btn-xs primary">Read</a>
+                                <button class="btn-xs ghost"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="dash-section">
-                <div class="dash-section-head"><h3>Preferences</h3></div>
-                <div class="settings-group">
-                    <div class="settings-row">
-                        <div><label>Interface Language</label></div>
-                        <select style="width:160px;"><option>English</option><option>French</option><option>Arabic</option></select>
-                    </div>
-                    <div class="settings-row">
-                        <div>
-                            <label>Dark Mode</label>
-                            <p>Toggle site-wide theme</p>
+                <!-- ── TAB: Donation History ── -->
+                <div class="tab-panel" id="tab-donations">
+                    <div class="stat-grid">
+                        <div class="stat-card">
+                            <div class="label">Total Donated</div>
+                            <div class="value">$300</div>
+                            <div class="note">Across 12 transactions</div>
                         </div>
-                        <label class="toggle-switch"><input type="checkbox" id="dark-setting"><span class="toggle-slider"></span></label>
+                        <div class="stat-card">
+                            <div class="label">This Year</div>
+                            <div class="value">$175</div>
+                            <div class="note">Jan – Mar 2026</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="label">Impact Rank</div>
+                            <div class="value">Top 8%</div>
+                            <div class="note">Among all members</div>
+                        </div>
+                    </div>
+                    <div class="dash-section">
+                        <div class="dash-section-head">
+                            <h3>Donation History</h3>
+                        </div>
+                        <div class="dash-table-wrap">
+                            <table class="dash-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Campaign</th>
+                                        <th>Status</th>
+                                        <th>Receipt</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mar 24, 2026</td>
+                                        <td>$25.00</td>
+                                        <td>Insider Membership</td>
+                                        <td><span class="badge-success">Successful</span></td>
+                                        <td><a href="#" style="color:#e63946;font-size:0.8rem;"><i
+                                                    class="fas fa-download"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Feb 24, 2026</td>
+                                        <td>$25.00</td>
+                                        <td>Insider Membership</td>
+                                        <td><span class="badge-success">Successful</span></td>
+                                        <td><a href="#" style="color:#e63946;font-size:0.8rem;"><i
+                                                    class="fas fa-download"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jan 24, 2026</td>
+                                        <td>$25.00</td>
+                                        <td>Insider Membership</td>
+                                        <td><span class="badge-success">Successful</span></td>
+                                        <td><a href="#" style="color:#e63946;font-size:0.8rem;"><i
+                                                    class="fas fa-download"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dec 15, 2025</td>
+                                        <td>$100.00</td>
+                                        <td>Year-End Campaign</td>
+                                        <td><span class="badge-success">Successful</span></td>
+                                        <td><a href="#" style="color:#e63946;font-size:0.8rem;"><i
+                                                    class="fas fa-download"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nov 5, 2025</td>
+                                        <td>$25.00</td>
+                                        <td>Insider Membership</td>
+                                        <td><span class="badge-pending">Pending</span></td>
+                                        <td><span style="color:var(--text-muted);font-size:0.8rem;">—</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div style="margin-top:1.5rem;">
-                <button class="btn-xs primary" style="padding:0.6rem 1.5rem; font-size:0.88rem;">Save Changes</button>
-            </div>
-        </div>
+                <!-- ── TAB: Billings ── -->
+                <div class="tab-panel" id="tab-billing">
+                    <div class="dash-section">
+                        <div class="dash-section-head">
+                            <h3>Current Plan</h3>
+                        </div>
+                        <div class="billing-card">
+                            <div class="billing-plan">
+                                <h4>Insider Membership</h4>
+                                <p>Renews automatically on April 24, 2026</p>
+                                <div style="margin-top:0.75rem; display:flex; gap:0.5rem;">
+                                    <button class="btn-xs primary">Upgrade to Partner</button>
+                                    <button class="btn-xs ghost">Cancel Plan</button>
+                                </div>
+                            </div>
+                            <div class="billing-price">$25<span>/mo</span></div>
+                        </div>
+                    </div>
 
-        </div>
-    </main>
-</div>
+                    <div class="dash-section">
+                        <div class="dash-section-head">
+                            <h3>Payment Method</h3>
+                        </div>
+                        <div style="padding:1.5rem; display:flex; justify-content:space-between; align-items:center;">
+                            <div style="display:flex; align-items:center; gap:1rem;">
+                                <div
+                                    style="width:52px; height:34px; background:#1a1f71; border-radius:6px; display:flex; align-items:center; justify-content:center;">
+                                    <i class="fab fa-cc-visa" style="color:#fff; font-size:1.3rem;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size:0.9rem; font-weight:600; color:var(--text-primary);">Visa
+                                        ending in 4242</div>
+                                    <div style="font-size:0.78rem; color:var(--text-muted);">Expires 08/2027</div>
+                                </div>
+                            </div>
+                            <button class="btn-xs ghost">Change Card</button>
+                        </div>
+                    </div>
+
+                    <div class="dash-section">
+                        <div class="dash-section-head">
+                            <h3>Billing History</h3>
+                        </div>
+                        <div class="dash-table-wrap">
+                            <table class="dash-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mar 24, 2026</td>
+                                        <td>Insider — Monthly</td>
+                                        <td>$25.00</td>
+                                        <td><span class="badge-success">Paid</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Feb 24, 2026</td>
+                                        <td>Insider — Monthly</td>
+                                        <td>$25.00</td>
+                                        <td><span class="badge-success">Paid</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jan 24, 2026</td>
+                                        <td>Insider — Monthly</td>
+                                        <td>$25.00</td>
+                                        <td><span class="badge-success">Paid</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB: Settings ── -->
+                <div class="tab-panel" id="tab-settings">
+                    <div class="dash-section">
+                        <div class="dash-section-head">
+                            <h3>Profile</h3>
+                        </div>
+                        <div class="settings-group">
+                            <div class="settings-row">
+                                <div><label>Full Name</label></div>
+                                <input type="text" value="Reader Name" style="width:220px;">
+                            </div>
+                            <div class="settings-row">
+                                <div><label>Email Address</label></div>
+                                <input type="email" value="reader@example.com" style="width:220px;">
+                            </div>
+                            <div class="settings-row">
+                                <div><label>Password</label></div>
+                                <button class="btn-xs ghost">Change Password</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-section">
+                        <div class="dash-section-head">
+                            <h3>Notifications</h3>
+                        </div>
+                        <div class="settings-group">
+                            <div class="settings-row">
+                                <div>
+                                    <label>Weekly Briefing Email</label>
+                                    <p>Receive a curated summary every Monday</p>
+                                </div>
+                                <label class="toggle-switch"><input type="checkbox" checked><span
+                                        class="toggle-slider"></span></label>
+                            </div>
+                            <div class="settings-row">
+                                <div>
+                                    <label>Breaking Investigation Alerts</label>
+                                    <p>Get notified when a major report is published</p>
+                                </div>
+                                <label class="toggle-switch"><input type="checkbox" checked><span
+                                        class="toggle-slider"></span></label>
+                            </div>
+                            <div class="settings-row">
+                                <div>
+                                    <label>Billing Reminders</label>
+                                    <p>Email alerts before each billing cycle</p>
+                                </div>
+                                <label class="toggle-switch"><input type="checkbox"><span
+                                        class="toggle-slider"></span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-section">
+                        <div class="dash-section-head">
+                            <h3>Preferences</h3>
+                        </div>
+                        <div class="settings-group">
+                            <div class="settings-row">
+                                <div><label>Interface Language</label></div>
+                                <select style="width:160px;">
+                                    <option>English</option>
+                                    <option>French</option>
+                                    <option>Arabic</option>
+                                </select>
+                            </div>
+                            <div class="settings-row">
+                                <div>
+                                    <label>Dark Mode</label>
+                                    <p>Toggle site-wide theme</p>
+                                </div>
+                                <label class="toggle-switch"><input type="checkbox" id="dark-setting"><span
+                                        class="toggle-slider"></span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:1.5rem;">
+                        <button class="btn-xs primary" style="padding:0.6rem 1.5rem; font-size:0.88rem;">Save
+                            Changes</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
 
     <button class="scroll-top" id="scroll-top" aria-label="Scroll to Top">
         <i class="fas fa-arrow-up"></i>
@@ -574,10 +1293,10 @@
     <script>
         // Tab switching
         const navLinks = document.querySelectorAll('.nav-link');
-        const panels   = document.querySelectorAll('.tab-panel');
+        const panels = document.querySelectorAll('.tab-panel');
 
         navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = this.dataset.tab;
 
@@ -593,7 +1312,7 @@
 
         // Sync dark mode toggle in settings with theme toggle
         const darkSetting = document.getElementById('dark-setting');
-        const themeBtn    = document.getElementById('theme-toggle');
+        const themeBtn = document.getElementById('theme-toggle');
         if (darkSetting && themeBtn) {
             darkSetting.addEventListener('change', () => themeBtn.click());
         }
@@ -625,4 +1344,5 @@
         }
     </script>
 </body>
+
 </html>

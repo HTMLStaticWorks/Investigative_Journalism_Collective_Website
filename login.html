@@ -126,6 +126,10 @@
             color: #ea4335;
         }
 
+        .social-btn .fa-apple {
+            color: #000;
+        }
+
         /* Divider */
         .or-divider {
             display: flex;
@@ -151,7 +155,6 @@
 
         .field-top {
             display: flex;
-            justify-content: space-between;
             align-items: center;
             margin-bottom: 0.4rem;
         }
@@ -162,13 +165,18 @@
             color: var(--text-primary);
         }
 
-        .field-top a {
+        .forgot-pw {
+            text-align: right;
+        }
+
+
+        .forgot-pw a {
             font-size: 0.78rem;
             color: #e63946;
             text-decoration: none;
         }
 
-        .field-top a:hover {
+        .forgot-pw a:hover {
             text-decoration: underline;
         }
 
@@ -231,15 +239,24 @@
         .remember-row {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 0.5rem;
             margin-bottom: 1.4rem;
+        }
+
+        .remember-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .remember-row input[type="checkbox"] {
             accent-color: #e63946;
             width: 14px;
             height: 14px;
+            cursor: pointer;
         }
+
 
         .remember-row label {
             font-size: 0.81rem;
@@ -333,7 +350,6 @@
                 <div class="field-group">
                     <div class="field-top">
                         <label for="password">Password</label>
-                        <a href="#">Forgot password?</a>
                     </div>
                     <div class="field-wrap">
                         <i class="fas fa-lock f-icon"></i>
@@ -342,12 +358,21 @@
                             <i class="fas fa-eye" id="pw-icon"></i>
                         </button>
                     </div>
+
                 </div>
 
                 <div class="remember-row">
-                    <input type="checkbox" id="remember">
-                    <label for="remember">Keep me logged in for 30 days</label>
+
+
+                    <div class="remember-group">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <div class="forgot-pw">
+                        <a href="#">Forgot password?</a>
+                    </div>
                 </div>
+
 
                 <button type="submit" class="btn-login">Sign In &nbsp;<i class="fas fa-arrow-right"></i></button>
 
@@ -360,8 +385,8 @@
                         <span>Google</span>
                     </button>
                     <button type="button" class="social-btn">
-                        <i class="fab fa-facebook" style="color: #1877f2;"></i>
-                        <span>Facebook</span>
+                        <i class="fab fa-apple"></i>
+                        <span>Apple</span>
                     </button>
                 </div>
             </form>
