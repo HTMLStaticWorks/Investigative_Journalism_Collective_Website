@@ -72,7 +72,7 @@
                     <!-- Card 1: Finance -->
                     <div class="card reveal border-radius overflow-hidden">
                         <div class="card-img-wrapper">
-                            <img src="assets/images/finance_card.png" alt="Finance" class="card-img">
+                            <img src="assets/images/article_offshore_files.png" alt="Finance" class="card-img">
                         </div>
                         <div class="p-md text-center">
                             <span class="tag-sm mb-xs">Finance</span>
@@ -84,7 +84,7 @@
                     <!-- Card 2: Tech -->
                     <div class="card reveal border-radius overflow-hidden">
                         <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Technology" class="card-img">
+                            <img src="assets/images/article_silicon_panopticon.png" alt="Technology" class="card-img">
                         </div>
                         <div class="p-md text-center">
                             <span class="tag-sm mb-xs">Technology</span>
@@ -96,7 +96,7 @@
                     <!-- Card 3: Environment -->
                     <div class="card reveal border-radius overflow-hidden">
                         <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1621274790572-7c32596bc67f?auto=format&fit=crop&w=600&q=80" alt="Environment" class="card-img">
+                            <img src="assets/images/article_toxic_legacies.png" alt="Environment" class="card-img">
                         </div>
                         <div class="p-md text-center">
                             <span class="tag-sm mb-xs">Environment</span>
@@ -108,7 +108,7 @@
                     <!-- Card 4: Human Rights -->
                     <div class="card reveal border-radius overflow-hidden">
                         <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=600&q=80" alt="Human Rights" class="card-img">
+                            <img src="assets/images/article_chain_silence.png" alt="Human Rights" class="card-img">
                         </div>
                         <div class="p-md text-center">
                             <span class="tag-sm mb-xs">Human Rights</span>
@@ -120,7 +120,7 @@
                     <!-- Card 5: Public Health -->
                     <div class="card reveal border-radius overflow-hidden">
                         <div class="card-img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1584483766114-2cea6facdf57?auto=format&fit=crop&w=600&q=80" alt="Public Health" class="card-img">
+                            <img src="assets/images/article_prescription_profit.png" alt="Public Health" class="card-img">
                         </div>
                         <div class="p-md text-center">
                             <span class="tag-sm mb-xs">Public Health</span>
@@ -132,7 +132,7 @@
                     <!-- Card 6: Lobbying -->
                     <div class="card reveal border-radius overflow-hidden">
                         <div class="card-img-wrapper">
-                            <img src="assets/images/politics_card.png" alt="Politics" class="card-img">
+                            <img src="assets/images/article_invisible_hand.png" alt="Politics" class="card-img">
                         </div>
                         <div class="p-md text-center">
                             <span class="tag-sm mb-xs">Politics</span>
@@ -156,7 +156,7 @@
                     <!-- Card 1: Field Research -->
                     <div class="investigative-card reveal">
                         <div class="investigative-img-wrapper">
-                            <img src="assets/images/field_research_asset.png" alt="Field Research">
+                            <img src="assets/images/asset_field_research.png" alt="Field Research">
                         </div>
                         <div class="investigative-content">
                             <h3>Field Research</h3>
@@ -278,8 +278,8 @@
     <style>
         /* Home 2 Redesign Styles */
         .home2-hero {
-            height: 80vh;
-            min-height: 600px;
+            height: calc(100vh - 80px);
+            min-height: 500px;
             background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
                         url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
@@ -320,6 +320,7 @@
             .hero-title { font-size: 3rem; }
         }
         @media (max-width: 768px) {
+            .home2-hero { height: calc(100vh - 64px); min-height: 450px; }
             .grid-4, .grid-3 { grid-template-columns: 1fr; }
             .hero-title { font-size: 2.5rem; }
             .hero-btns { flex-direction: column; width: 100%; max-width: 300px; margin-inline: auto; }
